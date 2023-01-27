@@ -1,0 +1,122 @@
+[1;31m
+Start test 1[0m
+Genesis Block:
+Created by miner #7
+Id: 1
+Timestamp: 1674793298430
+Magic number: 1298498081
+Hash of the previous block:
+0
+Hash of the block:
+Afdd482386b7f3e58c3b3bfc59c0381cf64d1ac97a7303db1c99c81b9d57b977e
+#Block was generating for 0 seconds
+N was increased to 1
+
+Block:
+Created by miner #5
+Id: 2
+Timestamp: 1674793298431
+Magic number: 510351408
+Hash of the previous block:
+Afdd482386b7f3e58c3b3bfc59c0381cf64d1ac97a7303db1c99c81b9d57b977e
+Hash of the block:
+A039b4da8178bba3f7ee5d9cf055fcc107c5b20062ae8f3ab05b480112c0729d2
+#Block was generating for 0 seconds
+N was increased to 2
+
+Block:
+Created by miner #4
+Id: 3
+Timestamp: 1674793298432
+Magic number: 1760758181
+Hash of the previous block:
+A039b4da8178bba3f7ee5d9cf055fcc107c5b20062ae8f3ab05b480112c0729d2
+Hash of the block:
+A000353a2fbe66b4559818d4350ec4113b79c7e2cd698b95766b998574f5143a3
+#Block was generating for 0 seconds
+N was increased to 3
+
+Block:
+Created by miner #4
+Id: 4
+Timestamp: 1674793298432
+Magic number: 591853271
+Hash of the previous block:
+A000353a2fbe66b4559818d4350ec4113b79c7e2cd698b95766b998574f5143a3
+Hash of the block:
+A000dfd8cd2f04b735f49adaaa9cf77c0fe32f11b10ce468de7d6f5cd88000e46
+#Block was generating for 0 seconds
+N was increased to 4
+
+Block:
+Created by miner #2
+Id: 5
+Timestamp: 1674793298523
+Magic number: 331612286
+Hash of the previous block:
+A000dfd8cd2f04b735f49adaaa9cf77c0fe32f11b10ce468de7d6f5cd88000e46
+Hash of the block:
+A00007900de9a511117137fbf48eb4b9ffacaa66b70bac18c518558fb8adea3ab
+#Block was generating for 0 seconds
+N was increased to 5
+[1;31m
+Start test 2[0m
+Genesis Block:
+Created by miner #7
+Id: 1
+Timestamp: 1674793298898
+Magic number: 1298498081
+Hash of the previous block:
+0
+Hash of the block:
+Afdd482386b7f3e58c3b3bfc59c0381cf64d1ac97a7303db1c99c81b9d57b977e
+#Block was generating for 0 seconds
+N was increased to 1
+
+Block:
+Created by miner #6
+Id: 2
+Timestamp: 1674793298898
+Magic number: 540928142
+Hash of the previous block:
+Afdd482386b7f3e58c3b3bfc59c0381cf64d1ac97a7303db1c99c81b9d57b977e
+Hash of the block:
+A0e53f39e072d5f615f578246bce822d6c53af237493c5b38939bd4b2f35d299b
+#Block was generating for 0 seconds
+N was increased to 2
+
+Block:
+Created by miner #6
+Id: 3
+Timestamp: 1674793298899
+Magic number: 209950280
+Hash of the previous block:
+A0e53f39e072d5f615f578246bce822d6c53af237493c5b38939bd4b2f35d299b
+Hash of the block:
+A004696d18e249b2043d5fc8100078c2dc7807169635174dcb06f8c3da9d05c9b
+#Block was generating for 0 seconds
+N was increased to 3
+
+Block:
+Created by miner #3
+Id: 4
+Timestamp: 1674793298900
+Magic number: 1039996209
+Hash of the previous block:
+A004696d18e249b2043d5fc8100078c2dc7807169635174dcb06f8c3da9d05c9b
+Hash of the block:
+A0000597694bd8a8d52043c7e8fe26ab774c907ce8484e3fa5ae07f28bc25c8cc
+#Block was generating for 0 seconds
+N was increased to 4
+
+Block:
+Created by miner #1
+Id: 5
+Timestamp: 1674793298949
+Magic number: 182358622
+Hash of the previous block:
+A0000597694bd8a8d52043c7e8fe26ab774c907ce8484e3fa5ae07f28bc25c8cc
+Hash of the block:
+A0000a3f1b72d554d8d3a98abce5334147993cb148f56a1d88e1019f669a98b52
+#Block was generating for 0 seconds
+N was increased to 5

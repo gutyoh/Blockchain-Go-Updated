@@ -1,0 +1,83 @@
+[1;31m
+Start test 1[0m
+Genesis Block:
+Created by miner #7
+Id: 1
+Timestamp: 1674793311330
+Magic number: 1298498081
+Hash of the previous block:
+0
+Hash of the block:
+Afdd482386b7f3e58c3b3bfc59c0381cf64d1ac97a7303db1c99c81b9d57b977e
+Block data:
+No messages
+#Block was generating for 0 seconds
+N was increased to 1
+
+2Enter a single message to send to the Blockchain:
+"> Tom: Hey, I'm first once again!
+
+Block:
+Created by miner #4
+Id: 2
+Timestamp: 1674793311381
+Magic number: 1907346718
+Hash of the previous block:
+Afdd482386b7f3e58c3b3bfc59c0381cf64d1ac97a7303db1c99c81b9d57b977e
+Hash of the block:
+A01ca8c2ec6e65f85a258723fb19df74f690cd44fb7a7d736d22591df7332464d
+Block data:
+ Tom: Hey, I'm first once again!
+#Block was generating for 0 seconds
+N was increased to 2
+
+2Enter a single message to send to the Blockchain:
+3> Nick: Hey Tom, nice Blockchain chat you created!
+
+Block:
+Created by miner #1
+Id: 3
+Timestamp: 1674793311441
+Magic number: 444284801
+Hash of the previous block:
+A01ca8c2ec6e65f85a258723fb19df74f690cd44fb7a7d736d22591df7332464d
+Hash of the block:
+A00fdb3c3bf458226bdb154dba6a487e5155fce722f6800384f7e8641fbcd8e82
+Block data:
+1Nick: Hey Tom, nice Blockchain chat you created!
+#Block was generating for 0 seconds
+N was increased to 3
+
+2Enter a single message to send to the Blockchain:
+7> Tom: Thanks, Nick! It was a lot of fun to create it!
+S> Tom: Anyways, I have to leave for a meeting now. Enjoy the blockchain chat. Bye!
+
+Block:
+Created by miner #7
+Id: 4
+Timestamp: 1674793311516
+Magic number: 7965667
+Hash of the previous block:
+A00fdb3c3bf458226bdb154dba6a487e5155fce722f6800384f7e8641fbcd8e82
+Hash of the block:
+A000943b2758123a6a02d4bbebe27fff3de2645f0c9d2cbed0c9629e26baabe6a
+Block data:
+5Tom: Thanks, Nick! It was a lot of fun to create it!
+#Block was generating for 0 seconds
+N was increased to 4
+
+2Enter a single message to send to the Blockchain:
+
+Block:
+Created by miner #9
+Id: 5
+Timestamp: 1674793311586
+Magic number: 485925952
+Hash of the previous block:
+A000943b2758123a6a02d4bbebe27fff3de2645f0c9d2cbed0c9629e26baabe6a
+Hash of the block:
+A000079193c6dbdb648752ca69b23e8e9585746dc160857ad76bac8405bfe8872
+Block data:
+QTom: Anyways, I have to leave for a meeting now. Enjoy the blockchain chat. Bye!
+#Block was generating for 0 seconds
+N was increased to 5
