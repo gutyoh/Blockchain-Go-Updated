@@ -23,8 +23,12 @@ func (b *Block) Init(timestamp time.Time, previousHash string) {
 }
 
 func (b *Block) CalculateHash() string {
-	sum := sha256.Sum256([]byte(b.PreviousHash + b.Timestamp.String()))
-	return fmt.Sprintf("%x", sum)
+	//sum := sha256.Sum256([]byte(b.PreviousHash + b.Timestamp.String()))
+	//return fmt.Sprintf("%x", sum)
+	sha256Hash := sha256.New()
+	sha256Hash.Write([]byte(fmt.Sprintf("%d%s%d", b.ID, b.PreviousHash, b.Timestamp.UnixMilli())))
+
+	return fmt.Sprintf("%x", sha256Hash.Sum(nil))
 }
 
 func (b *Block) Print() {
@@ -40,7 +44,7 @@ func (b *Block) Print() {
 		"Timestamp: %d\n"+
 		"Hash of the previous block:\n%s\n"+
 		"Hash of the block:\n%s\n",
-		b.ID, b.Timestamp.Nanosecond(), b.PreviousHash, b.Hash)
+		b.ID, b.Timestamp.UnixMilli(), b.PreviousHash, b.Hash)
 }
 
 func main() {

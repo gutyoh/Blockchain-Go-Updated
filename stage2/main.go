@@ -41,10 +41,18 @@ func (b *Block) Init(timestamp time.Time, previousHash string) {
 }
 
 func (b *Block) CalculateHash() string {
+	blockID := fmt.Sprintf("%d", b.ID)
+	previousHash := fmt.Sprintf("%s", b.PreviousHash)
+	timestamp := fmt.Sprintf("%d", b.Timestamp.UnixMilli())
 	nonce := fmt.Sprintf("%d", b.Nonce)
 	magicNumber := fmt.Sprintf("%d", b.MagicNumber)
-	sum := sha256.Sum256([]byte(b.PreviousHash + b.Timestamp.String() + nonce + magicNumber))
-	return fmt.Sprintf("%x", sum)
+	//sum := sha256.Sum256([]byte(b.PreviousHash + b.Timestamp.String() + nonce + magicNumber))
+	//return fmt.Sprintf("%x", sum)
+
+	sha256Hash := sha256.New()
+	sha256Hash.Write([]byte(blockID + previousHash + timestamp + nonce + magicNumber))
+
+	return fmt.Sprintf("%x", sha256Hash.Sum(nil))
 }
 
 func (b *Block) MineBlock(difficulty int) {
@@ -73,7 +81,7 @@ func (b *Block) Print() {
 		"Hash of the previous block:\n%s\n"+
 		"Hash of the block:\n%s\n"+
 		"Block was generating for %d seconds\n",
-		b.ID, b.Timestamp.Nanosecond(), b.MagicNumber, b.PreviousHash, b.Hash, b.BuildTime)
+		b.ID, b.Timestamp.UnixMilli(), b.MagicNumber, b.PreviousHash, b.Hash, b.BuildTime)
 }
 
 type Blockchain struct {
@@ -87,9 +95,17 @@ func (bc *Blockchain) Init(difficulty int) {
 }
 
 func (bc *Blockchain) CreateGenesisBlock() Block {
-	timestamp := time.Now()
-	magicNumber := rand.NewSource(timestamp.UnixNano())
-	hash := sha256.Sum256([]byte("Genesis block" + fmt.Sprintf("%d", magicNumber)))
+	//timestamp := time.Now()
+	//magicNumber := rand.NewSource(timestamp.UnixNano())
+	//hash := sha256.Sum256([]byte("Genesis block" + fmt.Sprintf("%d", magicNumber)))
+
+	blockID := fmt.Sprintf("%d", 1)
+	timestamp := fmt.Sprintf("%d", time.Now().UnixMilli())
+	magicNumber := rand.NewSource(time.Now().UnixMilli())
+
+	sha256Hash := sha256.New()
+	sha256Hash.Write([]byte(blockID + timestamp + fmt.Sprintf("%d", magicNumber.Int63())))
+	hash := sha256Hash.Sum(nil)
 
 	// the difficulty is a number of zeros the hash must start with
 	difficulty := strings.Repeat("0", bc.Difficulty)
