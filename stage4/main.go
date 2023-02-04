@@ -33,12 +33,23 @@ type Block struct {
 }
 
 func (b *Block) CalculateHash() string {
-	magicNumber := fmt.Sprintf("%d", b.MagicNumber)
-	id := fmt.Sprintf("%d", b.ID)
-	timestamp := fmt.Sprintf("%s", b.Timestamp)
+	//magicNumber := fmt.Sprintf("%d", b.MagicNumber)
+	//id := fmt.Sprintf("%d", b.ID)
+	//timestamp := fmt.Sprintf("%s", b.Timestamp)
+	//
+	//sum := sha256.Sum256([]byte(id + timestamp + b.PreviousHash + magicNumber))
+	//return fmt.Sprintf("%x", sum)
 
-	sum := sha256.Sum256([]byte(id + timestamp + b.PreviousHash + magicNumber))
-	return fmt.Sprintf("%x", sum)
+	var (
+		blockID           = fmt.Sprintf("%d", b.ID)
+		timestamp         = fmt.Sprintf("%d", b.Timestamp.UnixMilli())
+		magicNumber       = fmt.Sprintf("%d", b.MagicNumber)
+		previousBlockHash = b.PreviousHash
+	)
+	sha256Hash := sha256.New()
+	sha256Hash.Write([]byte(blockID + previousBlockHash + timestamp + magicNumber))
+
+	return fmt.Sprintf("%x", sha256Hash.Sum(nil))
 }
 
 type Blockchain struct {
@@ -52,12 +63,27 @@ func (bc *Blockchain) Init() {
 
 func (bc *Blockchain) CreateGenesisBlock() *Block {
 	timestamp := time.Now()
-	magicNumber := rand.Int31()
-	miner := rand.Intn(10)
-	hash := sha256.Sum256([]byte("Genesis block" + fmt.Sprintf("%d", magicNumber)))
+	rand.Seed(timestamp.UnixMilli())
 
-	return &Block{ID: 1, Hash: fmt.Sprintf("%x", hash), MagicNumber: magicNumber, Miner: uint(miner),
-		Timestamp: timestamp, PreviousHash: "0" /*Data: []string{"no messages"}*/}
+	var (
+		blockID           = 1
+		magicNumber       = rand.Int31()
+		previousBlockHash = "0"
+	)
+	blockData := fmt.Sprintf("%d%s%d%s", blockID, timestamp, magicNumber, previousBlockHash)
+
+	sha256Hash := sha256.New()
+	sha256Hash.Write([]byte(blockData))
+	hash := sha256Hash.Sum(nil)
+
+	genesisBlock := &Block{
+		ID:           1,
+		Hash:         fmt.Sprintf("%x", hash),
+		MagicNumber:  magicNumber,
+		Timestamp:    timestamp,
+		PreviousHash: "0",
+	}
+	return genesisBlock
 }
 
 func (bc *Blockchain) GetBlockData() error {
@@ -86,9 +112,9 @@ func (bc *Blockchain) Print(nState string) {
 
 	if lastBlock.ID > 1 {
 		fmt.Printf("\nBlock:\n")
+		fmt.Printf("Created by miner%d\n", lastBlock.Miner)
 	}
 
-	fmt.Printf("Created by miner #%d\n", lastBlock.Miner)
 	fmt.Printf("Id: %d\n", lastBlock.ID)
 	fmt.Printf("Timestamp: %d\n", lastBlock.Timestamp.UnixMilli())
 	fmt.Printf("Magic number: %d\n", lastBlock.MagicNumber)

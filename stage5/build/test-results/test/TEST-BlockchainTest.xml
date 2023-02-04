@@ -1,18 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BlockchainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-27T04:22:02" hostname="SERVER-GUTY" time="2.062">
+<testsuite name="BlockchainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-04T21:44:05" hostname="SERVER-GUTY" time="2.84">
   <properties/>
-  <testcase name="start" classname="BlockchainTest" time="2.062"/>
+  <testcase name="start" classname="BlockchainTest" time="2.84"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
 Genesis Block:
-Created by miner #9
 Id: 1
-Timestamp: 1674793323852
-Magic number: 1298498081
+Timestamp: 1675547046928
+Magic number: 752185064
 Hash of the previous block:
 0
 Hash of the block:
-116a9b0571f5d7b5cd0deda690a4f51eec91c67fb1bcb71d325df8de5e034e04
+b92fba15eb04f03950f6d63223210bd8f1fb73f90b16e0adb64a872b9b025c49
+Block data:
+No messages
+Block was generating for 0 seconds
+N was increased to 1
+
+Enter a single message to send to the Blockchain:
+> Tom: Hey, I'm first
+
+Block:
+Created by miner4
+Id: 2
+Timestamp: 1675547046966
+Magic number: 1959547838
+Hash of the previous block:
+b92fba15eb04f03950f6d63223210bd8f1fb73f90b16e0adb64a872b9b025c49
+Hash of the block:
+0035419d0c1f68c966e7f2febe2779d44f3f4a220317d11542c9143f050f5250
+Block data:
+Tom: Hey, I'm first
+Message ID: beb8ddc640851e0d8d8ea4353e7f37039ca8db09b506c26715d42efce395bf9f
+Signature: MEYCIQCwvGbglHnQte4ggz+tFD37MPmay0rRTYhK95ImUAKJnAIhAJ/ULqdwfPl2NaALiUMB4MZV+fz/kEK++8faeQiolTtZ
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEMsPnPrxCTvXlKyMEpDZ3pIAMyZkEluFN4i237CKrF7DrRKBGmpKlUsiNNhXP8p5WwDy2IxqXDWgg1qXbsrtn+Q==
+Block was generating for 0 seconds
+N was increased to 2
+
+Enter a single message to send to the Blockchain:
+> Alice: It's not fair! You always will be first because it is your blockchain!
+
+Block:
+Created by miner1
+Id: 3
+Timestamp: 1675547047020
+Magic number: 1506394343
+Hash of the previous block:
+0035419d0c1f68c966e7f2febe2779d44f3f4a220317d11542c9143f050f5250
+Hash of the block:
+00c51ba6612ed256a8838190e1801e5e305f7f513c2f638a4b53c3c47a4837a8
+Block data:
+Alice: It's not fair! You always will be first because it is your blockchain!
+Message ID: 6ef5d38a3a00182b050a95bfb2e0b912c585237aedcc25a692b02bfd21ab410e
+Signature: MEQCIEWZrTnhUr+CUSWwMgLdQ6dqKFtiCbAydhOBZmOdxrznAiAx7EW0czCge/kqcowVF1K91H/bKOQUA2M4qy17Tj0e7w==
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/BXG6lRUL45NTUG71EK+bmp5lrnwPZT3FGmW/6ccF+a9OuHXwMnSmen/72Lpo7kqn/bTpYIt3/p+XwUBnLPgCg==
+Block was generating for 0 seconds
+N was increased to 3
+
+Enter a single message to send to the Blockchain:
+> Alice: Anyway, thank you for this amazing chat
+
+Block:
+Created by miner2
+Id: 4
+Timestamp: 1675547047085
+Magic number: 1219896936
+Hash of the previous block:
+00c51ba6612ed256a8838190e1801e5e305f7f513c2f638a4b53c3c47a4837a8
+Hash of the block:
+00064fdb625ded17dcec57bf375e7b5cc8c2faafe5ac1be55c654d13a20d2af9
+Block data:
+Alice: Anyway, thank you for this amazing chat
+Message ID: 0e8472bb0c1cf396b96fa84a0308600426df33425bb02927944a6db875ac6a67
+Signature: MEUCIQDQbssqL4Le2flBRnM+MFy/suDySCN+raWKSsdF0qDEOwIgIiXvyZuYziGxM2lOU5dmvUKjljJ3HO+Of69veN5nOY4=
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE1aDKl3AhswrzLGZKrHLvNYPWfeeKCRYk4G+h0T+D/t3uzKANG7OhojgP3xbkLwVeMku7RHsfI+LM1lhk7zJauA==
+Block was generating for 0 seconds
+N was increased to 4
+
+Enter a single message to send to the Blockchain:
+> Tom: You're welcome, Alice :)
+
+Block:
+Created by miner2
+Id: 5
+Timestamp: 1675547047173
+Magic number: 410096077
+Hash of the previous block:
+00064fdb625ded17dcec57bf375e7b5cc8c2faafe5ac1be55c654d13a20d2af9
+Hash of the block:
+00000e01621cd70cce0d41921ac25b0a4162f2f3296c86e4bd8188e3786dfc00
+Block data:
+Tom: You're welcome, Alice :)
+Message ID: 77199681d52ea505615b43de9e46e80c2bab2a8ef8eae83605e0235b90ea3a65
+Signature: MEUCIQD4H8ID1Qr1PIJqhA0j7uBKWGQZGscLQSdolF9H6EQSUwIgVoZUAIXirUbRCeV4BYGWucyshfZBQEQmzpU3VJ9/0qQ=
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEjUYkECak/KALMmnRv+PRl8/pYL4FayKFWAvmPKFRdrdI+Qj3NKgN8NLjR5NHvban8/dJXb4Z6waLXsS1vUN+tA==
+Block was generating for 0 seconds
+N was increased to 5
+?[1;31m
+Start test 2?[0m
+Genesis Block:
+Id: 1
+Timestamp: 1675547047550
+Magic number: 520690269
+Hash of the previous block:
+0
+Hash of the block:
+7e7587dd49179766de7c3e3aaeb5077a06271d60a615524dbe6c343c3a9ebadf
 Block data:
 No messages
 Block was generating for 0 seconds
@@ -22,19 +115,19 @@ Enter a single message to send to the Blockchain:
 > Tom: Hey, I'm first once again!
 
 Block:
-Created by miner #4
+Created by miner10
 Id: 2
-Timestamp: 1674793323913
-Magic number: 661001913
+Timestamp: 1675547047588
+Magic number: 126478376
 Hash of the previous block:
-116a9b0571f5d7b5cd0deda690a4f51eec91c67fb1bcb71d325df8de5e034e04
+7e7587dd49179766de7c3e3aaeb5077a06271d60a615524dbe6c343c3a9ebadf
 Hash of the block:
-038059300954c0382e2508d5e80d8b3ebaeae1c258f0dad065067d4230b2b6d5
+0ecb5cccab89546b953df50e70af0b42a15b4f55b47637bfd2e9125d10c292c2
 Block data:
 Tom: Hey, I'm first once again!
 Message ID: 32486fb689c8a1343f7f077b3ebe4c683b39f7c760e95c3db0a0cacab47896fe
-Signature: MEQCIFgJlkhsSbu1pd8kJLcOdZ6B3mB9egUbJ/jvUwbCMm68AiA9LJFSinC6IXnd3517AkTXNZh/SCqQo84j2GkaJ1BrKQ==
-Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAER8XOXR8xY/n9e1O/GtmOnVUcZX+4CB+dtMOCKFIMN8T1reoJCeOBZqKA64vYgNiYcdexb5LlqEA9136PEqT3wQ==
+Signature: MEQCIAKaEFNOKxRN/kInAC7knJGZsg+IgA5LulQNUTLkqT44AiAXyb4kEAo8dNUACTmuMHN/LxIOay5zLgQ56JAvVRFFkQ==
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdUa7ARgppOlYHm04ubnD6E7vYUJMi86JGCVcjzxTeKddb9vmjvfrtwzN1MYcwDxvJa0py5FiYdVONu5pEXCImw==
 Block was generating for 0 seconds
 N was increased to 2
 
@@ -42,19 +135,19 @@ Enter a single message to send to the Blockchain:
 > Nick: Hey Tom, nice Blockchain chat you created!
 
 Block:
-Created by miner #4
+Created by miner7
 Id: 3
-Timestamp: 1674793323995
-Magic number: 1712581280
+Timestamp: 1675547047630
+Magic number: 2044308346
 Hash of the previous block:
-038059300954c0382e2508d5e80d8b3ebaeae1c258f0dad065067d4230b2b6d5
+0ecb5cccab89546b953df50e70af0b42a15b4f55b47637bfd2e9125d10c292c2
 Hash of the block:
-009090d888575879699c1a14bc7eb04e134398023e372b195e0585466c3f61d4
+00f38b01ae58568cdf77db87c38af83279b5d689f237f10bd08d165a370a91a2
 Block data:
 Nick: Hey Tom, nice Blockchain chat you created!
 Message ID: 29fcde484d1298f57db504726972d48c67032027be2f082cb697b8728ddc4db4
-Signature: MEQCIBLSImrJDDmkVSLesD2K+UuX2WJhcYz1Xzqb3HVic8DeAiBdBeUwwFvI9xi8zxJ2Wej1SlrJoxTBgarHpSV5Z/Cc/Q==
-Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAED0PyCwegIHQru8Hn7ceLvd7xdL8LxsEGGemu1vf4dKyhP7YN/FKTDHqyE0Qv90NqqYSideZte4zxGE3coHdFDw==
+Signature: MEUCIG8Mq2Qw6kn2ZicMW19MtEKWdqGWLWTpmt23rN2bZMK+AiEArFWrJLbEqpO+7vEnAnmDrG4Vwe45wpUfrBNej9Hr9RU=
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEnFp2yWgNkTjXQ4f63Wq0us//2WSbEHZ25QpJm3zURiFRgZ4KgcYK2jPC3MPkPlmtY7NtdLdAJBCBfZMvKE7ikQ==
 Block was generating for 0 seconds
 N was increased to 3
 
@@ -62,19 +155,19 @@ Enter a single message to send to the Blockchain:
 > Tom: Thanks, Nick! It was a lot of fun to create it!
 
 Block:
-Created by miner #6
+Created by miner2
 Id: 4
-Timestamp: 1674793324078
-Magic number: 1576854303
+Timestamp: 1675547047675
+Magic number: 954692421
 Hash of the previous block:
-009090d888575879699c1a14bc7eb04e134398023e372b195e0585466c3f61d4
+00f38b01ae58568cdf77db87c38af83279b5d689f237f10bd08d165a370a91a2
 Hash of the block:
-0006ef190f01162ca2e738c8e81890101010c7ed7f87471a93126ac2a28bd6a8
+00033d6b1c1b8977421a147fdb9ad253832abc500af717087fa9159d9e2d951c
 Block data:
 Tom: Thanks, Nick! It was a lot of fun to create it!
 Message ID: 47e1b1b96e67f8252d8d9eef9b18670b2bbd80bd1897c016fc23cf8f60eed7e1
-Signature: MEYCIQDG7inxUSegVv18ctkZoFh4IIk5UCWdOgYZfJKb6Jw6YwIhALwlMHUSxo3nM/sskU3VMvu4HcR0XDvwzOeDNQ5UhY07
-Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/Cjl0NLP2bmRSGldT9a782bTBB5bs2wJBBPofXrSs5ylu/6sOLGquxBIMBfWtd689olnck5O8s6YZHu8/aI/xA==
+Signature: MEYCIQDU4cbTysee3ftX9Tl5iTZLl+CYyh129EocOhfcEhV5VAIhALSaYle079LRyzaKfp1sPZPwyIUU3FxyZXZqZVKJw9xm
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFWojrXFMSd4Ik2h8S1UJXAIO9uKwdkcI5Os9+o4AtozXJdo3xnDMRPHsEnJJdo6Q3CKDbO12ZW+N5gFYMxZQQg==
 Block was generating for 0 seconds
 N was increased to 4
 
@@ -82,19 +175,19 @@ Enter a single message to send to the Blockchain:
 > Tom: Anyways, I have to leave for a meeting now. Enjoy the blockchain chat. Bye!
 
 Block:
-Created by miner #10
+Created by miner2
 Id: 5
-Timestamp: 1674793324171
-Magic number: 1487343823
+Timestamp: 1675547047789
+Magic number: 334470101
 Hash of the previous block:
-0006ef190f01162ca2e738c8e81890101010c7ed7f87471a93126ac2a28bd6a8
+00033d6b1c1b8977421a147fdb9ad253832abc500af717087fa9159d9e2d951c
 Hash of the block:
-00002e8612e92d7a7f1e4f428fad1f5a65ec7e1c04a7e8355f3a610ba2f336ce
+00007a152dbeb8dd8319fd9c6a06bc003fcf849a94e819b406ce1b9a06bbfffa
 Block data:
 Tom: Anyways, I have to leave for a meeting now. Enjoy the blockchain chat. Bye!
 Message ID: f64379c66633a9b93f477cfea8bbacf499e2058c49da2a81d4e2aae6cb0528e5
-Signature: MEYCIQDVKn+ktEJ6UetvlGzKHeCr98CKVRM7488zPOwmQGP38wIhALPPr22EEqxWoPENlWr4Keauu+14Ljs/a/XxQ9nQc61u
-Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIghHboab+poAfwlNdBB/SxJpgSkno/e5hEtSeULCnNmb937OlJ8xCibJfEZsesoyOMDcEL3ckouiev1UfrseRw==
+Signature: MEYCIQCpfXLKB+Q4kSsm6UOyGFXzzCrBQFWbjtmuVu2iEebiyQIhANHf8b1foDlFu04z0UXOEKkSMwPiv9BgRF5HVC+sCpa2
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE8ysKPC7RVWdAV6vxOK3lwXHVxW2+jb1sJwLMc0cYzA1BpxwW12wzgx602OnpkfRIRwKxCOPoBOPVoh1Cs/QP7w==
 Block was generating for 0 seconds
 N was increased to 5
 ]]></system-out>

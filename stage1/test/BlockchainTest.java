@@ -1,5 +1,3 @@
-// tests for stage 1
-
 import org.hyperskill.hstest.stage.StageTest;
 import org.hyperskill.hstest.testcase.CheckResult;
 import org.hyperskill.hstest.testcase.TestCase;
@@ -27,7 +25,27 @@ class Block {
         if (strBlock.length() == 0) {
             return null;
         }
+
+        if (!(strBlock.toLowerCase().contains("block")
+                && strBlock.toLowerCase().contains("timestamp"))) {
+
+            return null;
+        }
+
         Block block = new Block();
+
+        for (String line : strBlock.split("\n")) {
+            if (line.toLowerCase().startsWith("id:")) {
+                String id = line.split(":")[1].strip().replace("-", "");
+                boolean isNumeric = id.chars().allMatch(Character::isDigit);
+
+                if (!isNumeric) {
+                    throw new BlockParseException("Id should be a number");
+                }
+                block.id = Integer.parseInt(id);
+                break;
+            }
+        }
 
         List<String> lines = strBlock
                 .lines()
@@ -38,6 +56,11 @@ class Block {
         if (lines.size() != 7) {
             throw new BlockParseException("Every Block should " +
                     "contain 7 lines of data");
+        }
+
+        if (!lines.get(0).toLowerCase().startsWith("block") && !lines.get(0).toLowerCase().startsWith("genesis block")) {
+            throw new BlockParseException("The first line of the first block in the blockchain should be \"Genesis Block:\" and every subsequent Block's first line should be \"Block:\"" +
+                    "\nYour program instead printed as the first line in Block " + block.id + ": " + "\"" + lines.get(0) + "\"");
         }
 
         if (!lines.get(1).toLowerCase().startsWith("id:")) {
@@ -181,12 +204,12 @@ public class BlockchainTest extends StageTest {
 
             if (curr.id + 1 != next.id) {
                 return new CheckResult(false,
-                        "Id`s of blocks should increase by 1");
+                        "Id's of blocks should increase by 1");
             }
 
             if (next.timestamp < curr.timestamp) {
                 return new CheckResult(false,
-                        "Timestamp`s of blocks should increase");
+                        "Timestamp's of blocks should increase");
             }
 
             if (!next.hashprev.equals(curr.hash)) {

@@ -27,8 +27,8 @@ class Block {
             return null;
         }
 
-        if (!(strBlock.contains("Block:")
-                && strBlock.contains("Timestamp:"))) {
+        if (!(strBlock.toLowerCase().contains("block")
+                && strBlock.toLowerCase().contains("timestamp"))) {
 
             return null;
         }
@@ -44,6 +44,11 @@ class Block {
         if (lines.size() != 9) {
             throw new BlockParseException("Every Block should " +
                     "contain 9 lines of data");
+        }
+
+        if (!lines.get(0).toLowerCase().startsWith("block") && !lines.get(0).toLowerCase().startsWith("genesis block")) {
+            throw new BlockParseException("The first line of the first block in the blockchain should be \"Genesis Block:\" and every subsequent Block's first line should be \"Block:\"" +
+                    "\nYour program instead printed as the first line in Block " + block.id + ": " + "\"" + lines.get(0) + "\"");
         }
 
         if (!lines.get(1).toLowerCase().startsWith("id:")) {

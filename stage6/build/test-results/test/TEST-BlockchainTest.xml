@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BlockchainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-27T04:22:14" hostname="SERVER-GUTY" time="3.039">
+<testsuite name="BlockchainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-04T21:50:50" hostname="SERVER-GUTY" time="5.095">
   <properties/>
-  <testcase name="start" classname="BlockchainTest" time="3.039"/>
+  <testcase name="start" classname="BlockchainTest" time="5.095"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
 Genesis Block:
-Created by miner10
 Id: 1
-Timestamp: 1674793335580
-Magic number: 1298498081
+Timestamp: 1675547451908
+Magic number: 1256699920
 Hash of the previous block:
 0
 Hash of the block:
-c9dc7c86497a2d3d99eaa53479710bcdb3e4fd7d807a5460ee42fc3221a301b1
+0b8b3d8651d87b6efccfb4ceb0cd41906bad79a0b2e683ae4429d6fca9666a43
 Block data:
-Transaction #1 (Coinbase):
-Transaction ID: b2e8f5f55ec1f73b651c40801070c8f47fb4ab12bc6358782eba9706fee4286d
-Blockchain sent 100 VC to miner10
+No transactions
 Block was generating for 0 seconds
 N was increased to 1
 
@@ -43,24 +40,24 @@ User Nick doesn't have enough VC to send
 Nick current balance: 70 VC
 
 Block:
-Created by miner9
+Created by miner6
 Id: 2
-Timestamp: 1674793335880
-Magic number: 949619013
+Timestamp: 1675547452181
+Magic number: 1720154082
 Hash of the previous block:
-c9dc7c86497a2d3d99eaa53479710bcdb3e4fd7d807a5460ee42fc3221a301b1
+0b8b3d8651d87b6efccfb4ceb0cd41906bad79a0b2e683ae4429d6fca9666a43
 Hash of the block:
-052dcbe2c1785cba3958e6f2ca9d1db5dd2888394b36e5dc3b937c1c1b14a0e0
+047757726743b4827f472a5882d5fdbfe113640e7418cafe5fcc8743203c288f
 Block data:
 Transaction #1 (Coinbase):
-Transaction ID: 3d19901910ec596fc3b1ad6104d112a5b7b4c35159ed7479e759adc5ab6bbb23
-Blockchain sent 100 VC to miner9
-Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEs0vA2BJFWrITdLu9pMAc3/BX6RDWWf7OKaVxCHjNgy0GOB0sgq8P5WkQOiQIiEsJxYCs+WN4oWbWuFrmDqelnQ==
+Transaction ID: 2872e1582435f1dcd451fc28a09ba53ea991a719e34e13335c39489b2496cc01
+Blockchain sent 100 VC to miner6
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEz4znJJniNXZi7+bOZc5opYY88DyuH2lyWYKiR0dehRCzzFA5O8LzT1T0A6GKXmVrsXxMJ0Fmb2NaIb5vNAga5A==
 Transaction #2:
 Transaction ID: 41f7158cca34fffa4f2be0d1955dd73d531747b9f4676e045ae12645a59e43be
 Nick sent 30 VC to Alice
-Signature: MEQCIQCHjwHFeVrdfc55eGYjBrWkRAlZZZv5/QYRW4SagMKUIAIfbPNNJezAQ8AtNPLJL4txzE3Ywj0syrtOJU4aQ6vctw==
-Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEP4i4lGZP6eTcbn0bgoLoQZdyYbbIoDLWv0nXCchX/YlVZRPwauubEcEfedXtZOsuh9uruIAom09VZ6lGOkOzMQ==
+Signature: MEQCIHQY0y6nkS98cOOCNXhy5fDs2Hru6abTzI3tCv/vQRQvAiAeqxMrmz7KvrT4iUlMnE7mY89lSoSuPm8qsrf/23uG2Q==
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEuzd72/wZ84hZqiJ/7yB55V00WJZJUkhZyfHrC+I531GMwG5HYR1QPxry7sEhkQ0NQNBA7BmftQhXFKWhhUgCsw==
 Block was generating for 0 seconds
 N was increased to 2
 
@@ -86,24 +83,24 @@ Transaction is not valid! ❌ 
 You can't send VC from one user to the same user
 
 Block:
-Created by miner5
+Created by miner10
 Id: 3
-Timestamp: 1674793336186
-Magic number: 1334778302
+Timestamp: 1675547452447
+Magic number: 687624429
 Hash of the previous block:
-052dcbe2c1785cba3958e6f2ca9d1db5dd2888394b36e5dc3b937c1c1b14a0e0
+047757726743b4827f472a5882d5fdbfe113640e7418cafe5fcc8743203c288f
 Hash of the block:
-00e788cbe2e16cf2ba5b29f892609d015de8ab992e5671107ec49271ba2b274b
+0034b074c71afa8ef503b547834dce291ebcd348ca695ee5bd865682287b0087
 Block data:
 Transaction #1 (Coinbase):
-Transaction ID: 5854220a4a331a2d07f6ebcb8852179715d25e96ff6abb1e3c7fceb6e0a6adb1
-Blockchain sent 100 VC to miner5
-Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEb/xMlH009fSC97PWjsgO7zqXRsXSjmfKeJwJXdZalQ/g2ggEqrlaRX7gSr1VcCWkHb8mvZJgnmbahiQas9QDtQ==
+Transaction ID: b2e8f5f55ec1f73b651c40801070c8f47fb4ab12bc6358782eba9706fee4286d
+Blockchain sent 100 VC to miner10
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE8tT4YA+omtYnKGtECQZnPPXGxpcjb1to/IcBs4wycUvQBJUqDFcq5LJWucSyM0rRJNaN2uwsceOpkJlJ1stycw==
 Transaction #2:
 Transaction ID: adbfec9d51311145d6694792991c415b90b7290d92ee7e118e43ab6cafac5338
 Alice sent 80 VC to Nick
-Signature: MEUCIQDy0EcKo7uv9EXW7ZTOOVAcF5XRzd63Yi2b73269kz+QQIgDgXVJU6LCF8F4hXDNJh8YOhyogyMq6lA7ONC6vQJNiA=
-Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEe1Ir31EJazxAigJShkoVpjAzRiW/bfzFEHFEd0AvfTDr697HhZ+/ncSZPLULMnHlGrz/3II4yHAfVl7Gd0A2iw==
+Signature: MEUCIQD3NDTyIUu1Zhpzu3WA51BYx0PlVKoXz2dZa8DQ3xDVSQIgTondNHkSwlQ5tjj3l9/cppOkJIwgkqdPgKrWqoCHHBI=
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEinOkMnFduv3RGl/JvRfaHTckB83MXWDQKEjKvFFkTts4HSH5E3d1ReHSvUy6Z08QZwAwa6Plua8C2sD3B88SdQ==
 Block was generating for 0 seconds
 N was increased to 3
 
@@ -142,27 +139,27 @@ KrustyBurger new balance: 102 VC
 Block:
 Created by miner2
 Id: 4
-Timestamp: 1674793336562
-Magic number: 582536071
+Timestamp: 1675547452820
+Magic number: 1547504397
 Hash of the previous block:
-00e788cbe2e16cf2ba5b29f892609d015de8ab992e5671107ec49271ba2b274b
+0034b074c71afa8ef503b547834dce291ebcd348ca695ee5bd865682287b0087
 Hash of the block:
-0002ec498725c7ac90954f66e0df58f10b422fd82f2b197bf38c8ff6dc41d8f3
+0004c004f2b1be5ff51e5590e69fe37a903b3d9d49a9954805d141ee74060514
 Block data:
 Transaction #1 (Coinbase):
 Transaction ID: 72fd6948c8d812a6ad13715ddfb7fb9c2847915605492be4405ec410b69f6d5a
 Blockchain sent 100 VC to miner2
-Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEnx6qj0TSwq6pg4wbiG2Ap5uksQXu1p4U6UveV1jm0FuVyv47yj6dIlwx/9ZtmChkROZej1WpFltAZbYSY7bhAw==
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEyBAcycRfYq7vX/rYhoiL7UoXgLPAbOXhdlDO61d9DIJ87UnuKuMHZS2lAiL8cCMJVF7RNB/GUdR3fUSQKIyOKQ==
 Transaction #2:
 Transaction ID: fb261fc8250dbd951b3b8e69cfa5b94313cc5811a74a6126ff0d2aba8adabacf
 Alice sent 2 VC to KrustyBurger
-Signature: MEUCIQDvbYr1EmvB1GNBcuyQZ/U+NzMe96SPP5UUswboJwRrmwIgaYBgymZS6UnUcVhnOsV1JWhpRHounBH+e5h4RYioU8M=
-Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEj+sj10GPj9DzmtxWZ5o6esCmD/Cylg08ZA8LNJQaoqurCgqkwrYo3k7DVpct8bM3ZpBU1ZI9EscZS4VVbbHVzA==
+Signature: MEUCIF0gZnY9n0xoYedItE3v7EA900l5kJnCshjdi7Fl5s2UAiEA3ydgihFzCjaB/HxSrubZkN8yKSPlAJpp2xkxALxvTYA=
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEn2hVo28LyMAALnZ5nmQpP4Ciz8XqQVZrpJfBYhrKMAryYE+sE3Dr2shIFkCE6n5ajjLNgx8OZwKGjrYQb22MLw==
 Transaction #3:
 Transaction ID: bd05f07711a5fb5585c48db4549d4db440dd75bfc927be44c03aca8e61dfe294
 HyperGlam sent 30 VC to Alice
-Signature: MEYCIQD+XLkbZJfEiWSZ2KyQZA3LwNYy66U0e9/ljt/Jt9UpgAIhAJqIQU+1OxrFz+P8cITTg4delh60oPAfdyr0eqFYMgoW
-Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEDd5ajHp97eaBGxydFqGVboeW0w4K+g5cAnZC2qpjuW9HEQhUUpOlHT3BvJ6+a2wPUVQKoueIrXiiXXVd1q/15A==
+Signature: MEUCIQDwqbzPIWo0yyBOVOvZmQO5Scyr5/ofYuNDSVJ7uhUf5QIgbC0VDHmOi0pElvzkvZlD66kUPixIJKdmFHVIOqT4lMg=
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEN6+xyLVD5P66KXirtSfH7f7g5z0KHn9nG84CLdWHqB1HpUNsJhS8rhJCNtDeTnW9Ov/etmQ52c3z8qDbAqBhgg==
 Block was generating for 0 seconds
 N was increased to 4
 
@@ -199,36 +196,330 @@ Nick remaining balance: 1 VC
 FuelStation new balance: 104 VC
 
 Block:
-Created by miner4
+Created by miner1
 Id: 5
-Timestamp: 1674793337020
-Magic number: 2091219736
+Timestamp: 1675547453187
+Magic number: 732424157
 Hash of the previous block:
-0002ec498725c7ac90954f66e0df58f10b422fd82f2b197bf38c8ff6dc41d8f3
+0004c004f2b1be5ff51e5590e69fe37a903b3d9d49a9954805d141ee74060514
 Hash of the block:
-00009e8a9b463cbde7a0e8867760c1c50161eb62c3bc024233e9c1d41b147c95
+000086b2791e26b80fdcd5a67b19c4760dc85b7748359fbe13addd880747f838
 Block data:
 Transaction #1 (Coinbase):
-Transaction ID: 042e5378eb0ba82dc787d6986714b82033e14e29?[0;34m780d776cc8450295bf014bf9
-?[0m?[0;34mBlockchain sent 100 VC to miner4
-?[0m?[0;34mPublic Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7V3K3HE/vKYrr6X8tR+/sZC1FamnlPCBguFPYcU6IvcDejW4Asp0mn66Hp8xe0cJsb2SVXPUVNNJRU2QeOdi6w==
-?[0m?[0;34mTransaction #2:
-?[0m?[0;34mTransaction ID: 5f3f5d70b1dfafe2598ff5e0270d55c9071de692b971b6dde2af6fdf57cef090
-?[0m?[0;34mNick sent 4 VC to FuelStation
-?[0m?[0;34mSignature: MEUCIQD04E4gFZPcORbyXpzHwXQZQ6c9kz0ngklyXP2L/x89rAIgERowz9sM8I8hR+bGrTZ5/IcT0QKzARMVj2XnECwMbEI=
-?[0m?[0;34mPublic Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEAvEXEYXoFc3SGEBdpdkCphUPA7QFrB1pfJroJSFnlVT90hOv1XfZZixIWioolNAjBQjeI3lcx0rzLp1Cicbu2g==
-?[0m?[0;34mTransaction #3:
-?[0m?[0;34mTransaction ID: 3d974d1bc2a084af7437005c64817c599f7410cb25524a8dcb19db8f1cb86a8a
-?[0m?[0;34mIroncladConstruction sent 30 VC to Nick
-?[0m?[0;34mSignature: MEUCIQD/Cuklbrqb4/gfxXkW1ap0y5I7ErzCuUoE23i0qpiuewIgS4/AW205mtdq4+CSc0R0l/G8dQfiMKc9nkNZ4NM0eEQ=
-?[0m?[0;34mPublic Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAENeJrzh4T2U/h+xQE1cBDcxWX2TRu7eWZbezSPUPgRSnbWGGQOg6U2DsoWkaGy5gQ3TfQXHQnQBll1M7xbasUYA==
-?[0m?[0;34mTransaction #4:
-?[0m?[0;34mTransaction ID: 391e3dc0dd9195630714a5993f6892889af238cf2926422d0a7907542b013ce5
-?[0m?[0;34mNick sent 175 VC to FerrariShop
-?[0m?[0;34mSignature: MEQCIEtx/mmp5XedddonDqPK7BxUBz4ZeQhi7oADJ65h7Zg0AiAcFWxbrDyCYifGQVBU1FlxTxHTl1u2j3U5hhzvsne9/w==
-?[0m?[0;34mPublic Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEOTl91t5LlZvMDLAyWwKb2Xqatdnqxp/xgZySoD0EoFrjeFBPCx5vLmpznzaJ8kOiQDpQnF+QLxuDoncW31pOnA==
-?[0m?[0;34mBlock was generating for 0 seconds
-?[0m?[0;34mN was increased to 5
+Transaction ID: 4c2ac9343934ba64010789c2c63a9f9b4566a8e12c8659183a901942ecd8a612
+Blockchain sent 100 VC to miner1
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZAqvx/gqlBQ9C4s2AUHQGyPpCBqnSDV7+ZA8ucXzAtw7uErq44DaGvPIz1AaQ/LucvlFM2IeT97G770oQr9pFA==
+Transaction #2:
+Transaction ID: 5f3f5d70b1dfafe2598ff5e0270d55c9071de692b971b6dde2af6fdf57cef090
+Nick sent 4 VC to FuelStation
+Signature: MEQCIC+InbnoJU/9PxeqKG169BlfvrZuPEQhR7XOLsxBsSEwAiA7W3JZUy+q/2F0QJZmlDzCGwvJ1SqKGzKdz9PdDTHxBQ==
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAErAuqSIchH1DiJ0vcJo+8rBU4rCY0klJsAytZAnTDt/p2nqn6X6hZwi91oS3kfaZYasKOniAozYmrspY+4O7/gw==
+Transaction #3:
+Transaction ID: 3d974d1bc2a084af7437005c64817c599f7410cb25524a8dcb19db8f1cb86a8a
+IroncladConstruction sent 30 VC to Nick
+Signature: MEQCIFsVh+vuAMfadYXUqtoAPV/w5WZYLcbNssTUdyjQSJyXAiBr3h+xROeDrb7/WaGQZnDwi0nNC58RAGfVW9ODMowU0Q==
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEGz+BkGy/nKlweWw1MpiqOWU4RhKsvNt2XT/6aNPCAPpnsBQ/TcKKPFwyIM7Si4jvklpXGW0nYZc/cpFxeWfzcQ==
+Transaction #4:
+Transaction ID: 391e3dc0dd9195630714a5993f6892889af238cf2926422d0a7907542b013ce5
+Nick sent 175 VC to FerrariShop
+Signature: MEYCIQDoPlRXnBUWWf2L/MMjvpIEZjLpxRvI8cWY8mwwTtT7FQIhAI4mwS4GhgRkXuOFV4n5Sdao3xiqhAps1lkUui33lwPE
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdrycE9kyuBk4iz+klGadOQLsFnOMW0hVlXjTXJJIW+Kx2Y1bu/29UCaYHhzjs7DI3x2o07b6ojilLPE7/NP8Uw==
+Block was generating for 0 seconds
+N was increased to 5
+?[1;31m
+Start test 2?[0m
+Genesis Block:
+Id: 1
+Timestamp: 1675547453632
+Magic number: 120322806
+Hash of the previous block:
+0
+Hash of the block:
+111475329e942eae1b95cbd9d9781ad113e20d355bfb1be22dfc054730f5656c
+Block data:
+No transactions
+Block was generating for 0 seconds
+N was increased to 1
+
+Enter how many transactions you want to perform:
+> 5
+From user:
+> Rick
+To user:
+> Morty
+VC Amount:
+> 10
+Transaction is valid ✅ 
+Rick remaining balance: 90 VC
+Morty new balance: 110 VC
+
+From user:
+> Rick
+To user:
+> Beth
+VC Amount:
+> 100
+Transaction is not valid! ❌ 
+User Rick doesn't have enough VC to send
+Rick current balance: 90 VC
+
+From user:
+> Rick
+To user:
+> Beth
+VC Amount:
+> 20
+Transaction is valid ✅ 
+Rick remaining balance: 70 VC
+Beth new balance: 120 VC
+
+From user:
+> Rick
+To user:
+> Summer
+VC Amount:
+> 30
+Transaction is valid ✅ 
+Rick remaining balance: 40 VC
+Summer new balance: 130 VC
+
+From user:
+> Jerry
+To user:
+> Rick
+VC Amount:
+> 100
+Transaction is valid ✅ 
+Jerry remaining balance: 0 VC
+Rick new balance: 140 VC
+
+Block:
+Created by miner9
+Id: 2
+Timestamp: 1675547454179
+Magic number: 1752378373
+Hash of the previous block:
+111475329e942eae1b95cbd9d9781ad113e20d355bfb1be22dfc054730f5656c
+Hash of the block:
+07583f4a1e796af95e704d7b9efc01a69be09e7239b019153cd2f0c1e1efb88a
+Block data:
+Transaction #1 (Coinbase):
+Transaction ID: 3d19901910ec596fc3b1ad6104d112a5b7b4c35159ed7479e759adc5ab6bbb23
+Blockchain sent 100 VC to miner9
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEgDts6FdHXVI0Vp6wX9NNRTUt5LnyQwIoyT49fXgHLKUkGOCPes9h0/OAduTz5Ziy+ZxjE6pnwhbw5GMZORCvWw==
+Transaction #2:
+Transaction ID: 121920262b9df6b69fb60cf1a00785efb4e3061b13a9738d999e7299aef33f58
+Jerry sent 100 VC to Rick
+Signature: MEYCIQCf80UPp7lN1usYTJrFig4ItFvrQqHm3ASpyH+qO0BYJAIhANOIcAyBaIVX5/T+HHkqZy1N3vFUMBfSgKsf8gefijaJ
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEPiIctdTN7PxjB9x1v7UIFqmfohj2goE1LpVcHT2TSS5XNbSaSdDQMUVArGukrAf9HaPLvGjn0kZfo30t7NAEpg==
+Transaction #3:
+Transaction ID: d6eee1522839b4e88b915c1c79666d7fabd5ebc75a989397d20c45b8f486442d
+Rick sent 10 VC to Morty
+Signature: MEYCIQDOLQO1hmmweKamRXRrgHtMYWvZ/xqW6pP6iuIaUC/Z2AIhAI6BOlT481IwE3IgeqlzL+OPxmgz0Xba1/yuZFITlRlL
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE1QFhwuDujecZiQhj8CNUDsIl3eF9P7vGHdGUuDQd78g/zNraT8Zl2vNSMnqbr/MXXlLmYuUNk5H6T11RUxqsxQ==
+Transaction #4:
+Transaction ID: 957764d9f0e91d536c9b82df6c236c31607e604a2107486ecd7520f21bb51b29
+Rick sent 20 VC to Beth
+Signature: MEUCIQDyBtsmHiLrUGFzWCUcEyLDDIISzEoDsHEzqE/WldLCdwIgS4VOGw9pc7IipnNQAhcdx9S/7ZETleKHwwuryEX8MpY=
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3JwO8lN+mNXs9Y0eiizxgssyKLi5AePFZSfQlflVDvlzcp1inJirSL2iWB3yUkhRCrqUyFhlWyRpNdBap155cQ==
+Transaction #5:
+Transaction ID: f1e283a34f03c0554452700c9bb57ecfe564af974c9cfcdc366e8835f8ca0cb4
+Rick sent 30 VC to Summer
+Signature: MEYCIQD30AzWEs9Q7IMFzWAiabB9rS07FuU18AE9d9LSbovVLwIhAMVUREO5LeDgNAZcd5K5dQ7hP+YeP2Dyp1XWasXBHG8o
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEOI2wN8anxcwb2ceAMlBPJ2aQ4tDASNNT+LhGN89N1UWdmN+hCfe31W3wD4bo4TMWf+wDrQZnG4tlKYTY+Tjg8Q==
+Block was generating for 0 seconds
+N was increased to 2
+
+Enter how many transactions you want to perform:
+> 4
+From user:
+> Morty
+To user:
+> ShoneysRestaurant
+VC Amount:
+> 2
+Transaction is valid ✅ 
+Morty remaining balance: 108 VC
+ShoneysRestaurant new balance: 102 VC
+
+From user:
+> Summer
+To user:
+> SephoraShop
+VC Amount:
+> 10
+Transaction is valid ✅ 
+Summer remaining balance: 120 VC
+SephoraShop new balance: 110 VC
+
+From user:
+> Beth
+To user:
+> GucciShop
+VC Amount:
+> 20
+Transaction is valid ✅ 
+Beth remaining balance: 100 VC
+GucciShop new balance: 120 VC
+
+From user:
+> Jerry
+To user:
+> Beth
+VC Amount:
+> 1
+Transaction is not valid! ❌ 
+User Jerry doesn't have enough VC to send
+Jerry current balance: 0 VC
+
+Block:
+Created by miner9
+Id: 3
+Timestamp: 1675547454638
+Magic number: 578661402
+Hash of the previous block:
+07583f4a1e796af95e704d7b9efc01a69be09e7239b019153cd2f0c1e1efb88a
+Hash of the block:
+00418d6b66c473af73e100e966af2c6a313450c6d32209b9e7c8d415c731a60a
+Block data:
+Transaction #1 (Coinbase):
+Transaction ID: 3d19901910ec596fc3b1ad6104d112a5b7b4c35159ed7479e759adc5ab6bbb23
+Blockchain sent 100 VC to miner9
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7SpRE50lVHe0TJ2GLhW44GIyZbYOUxSqkG+2G5FxUt8gya0+AKT9YfeHdSA4wJYTVf5deljzAunqYLtRcZNN2Q==
+Transaction #2:
+Transaction ID: 6b3397f54af30b86b7b08565a85be136796b8bcb8640e0830ecd4ce671ee206e
+Beth sent 20 VC to GucciShop
+Signature: MEQCICDTHVYzrVDq3GmNSLFFL9e49cPLYIZB14nqDNe/KL5vAiBxSCnoQrM4eqc2eKVqRoaY2Blvu+2N5vH4/cjJJgIFCQ==
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEqYrrfzTQCS0GhRCp2Lc14bjgWd+4aV+IZvj40Xyi335/rqp5DcYD5Ej0byoA0sOAt8bX4+U4O3M85IDHfQf6jA==
+Transaction #3:
+Transaction ID: 5d3a9bec05de02f2d79ebf7d1a395b98f8faa42e899322d7ab80ff0f494f1096
+Morty sent 2 VC to ShoneysRestaurant
+Signature: MEUCIQDt/vwK+3c3TnNIlimuLz3bO0URuY18rFI8Htj9zIwmZgIgfdeq3Uzwju8Kfd5KY/LleU2TM8M1cGIWiSHC6lpLdYE=
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEO1aqUVzvaJBK/DwHZBgHYu9uz6kS7ibaecvggz46/NjVw8XAK2Rie8TrQUZewswxwH3i03utFwkY41RxXvLNlQ==
+Transaction #4:
+Transaction ID: 8b5bbdd1d97b071480ea47729ee8f1931e96299f72cd61932720779740a3a3b1
+Summer sent 10 VC to SephoraShop
+Signature: MEUCIAQUcRG0ukRs8MxDtQaNswJe0N//uNHN8f+5k9uBAS0LAiEAlxu0Vh/R0VLBUTKAL47023+iLn95WFjHxFK4JpHmbgo=
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEUhCJ1UqpjoR2xfap5EyKhSVuHIfMBsbXvKpuaNSxHJaAympCqDH9BG0x8oOEgRR5eo1NObYUDOs7yqtscadR5Q==
+Block was generating for 0 seconds
+N was increased to 3
+
+Enter how many transactions you want to perform:
+> 3
+From user:
+> PlumbusCompany
+To user:
+> Jerry
+VC Amount:
+> 1
+Transaction is valid ✅ 
+PlumbusCompany remaining balance: 99 VC
+Jerry new balance: 1 VC
+
+From user:
+> Jerry
+To user:
+> Beth
+VC Amount:
+> 5
+Transaction is not valid! ❌ 
+User Jerry doesn't have enough VC to send
+Jerry current balance: 1 VC
+
+From user:
+> Jerry
+To user:
+> Jerry
+VC Amount:
+> 10
+Transaction is not valid! ❌ 
+You can't send VC from one user to the same user
+
+Block:
+Created by miner9
+Id: 4
+Timestamp: 1675547455054
+Magic number: 1933988943
+Hash of the previous block:
+00418d6b66c473af73e100e966af2c6a313450c6d32209b9e7c8d415c731a60a
+Hash of the block:
+0009a5ec994c1b563c5e277aab9dc227ad011d3fdd29e4e26d24c5d63c900775
+Block data:
+Transaction #1 (Coinbase):
+Transaction ID: 3d19901910ec596fc3b1ad6104d112a5b7b4c35159ed7479e759adc5ab6bbb23
+Blockchain sent 100 VC to miner9
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAECZWjZcw9fwjVWrTU5HIwVGkopGecXilajE3kaIdgBNorLmwY2Na3ByfFrsIdeO0t00AYEuIg40qq8qAHnF99/Q==
+Transaction #2:
+Transaction ID: 7255470f8259170edf6f4c4346b288d16926781976eda53a077f32644a4bfa37
+PlumbusCompany sent 1 VC to Jerry
+Signature: MEUCIQDhjQzUzhxParym+jGF59YmGJctsbWyDPLJwG51ioLgXgIgX76sTXEnnrBM7phl0cBgy5weCfnv8dnhr6cwUcFEs8o=
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZCoSHfSpx4/Okc4uCqo0KNUjJDqN84MR5refNgXWydaAvfHHTPq1vA/RzBB9aP98hUMfHde854KKhKPEspq6qQ==
+Block was generating for 0 seconds
+N was increased to 4
+
+Enter how many transactions you want to perform:
+> 3
+From user:
+> VetClinic
+To user:
+> Beth
+VC Amount:
+> 50
+Transaction is valid ✅ 
+VetClinic remaining balance: 50 VC
+Beth new balance: 150 VC
+
+From user:
+> Beth
+To user:
+> Jerry
+VC Amount:
+> 1
+Transaction is valid ✅ 
+Beth remaining balance: 149 VC
+Jerry new balance: 2 VC
+
+From user:
+> Beth
+To user:
+> WineShop
+VC Amount:
+> 19
+Transaction is valid ✅ 
+Beth remaining balance: 130 VC
+WineShop new balance: 119 VC
+
+Block:
+Created by miner2
+Id: 5
+Timestamp: 1675547455425
+Magic number: 1905694726
+Hash of the previous block:
+0009a5ec994c1b563c5e277aab9dc227ad011d3fdd29e4e26d24c5d63c900775
+Hash of the block:
+0000be6ae6175599ddb18529680dbbd26f1b79a89946da5b7fe0b13449a130ab
+Block data:
+Transaction #1 (Coinbase):
+Transaction ID: 72fd6948c8d812a6ad13715ddfb7fb9c2847915605492be4405ec410b69f6d5a
+Blockchain sent 100 VC to miner2
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEGR6993SeuM2cz8VoFNL+RkH2ZlDnnjnxriyMu0xsw4CRoSbJCvcQ98oii82Ef6bUphhx/yGDRIph7E+SAGjx5Q==
+Transaction #2:
+Transaction ID: af89e671e569e995ece9efd55072750df1083c08a7ec72d6e2f53308a3ec0fb9
+Beth sent 19 VC to WineShop
+Signature: MEUCIQCoJEGDTQryki4UkEok6FEtAcKRnCMWHNOiLWfl8J+uGQIgFdXOMaBzQeMd9tQCfSA4G47iF6gZhoWfoDcsFy1hcwU=
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAES0capJF/cUJ24WQY4/7ftW9kSkV1jc5EIQ5RApoFy2o6WReyxS46wbXb80oUKYyoQBuBpdaOh0bm2a/+51CqDA==
+Transaction #3:
+Transaction ID: 785e8fdbfa77780df6f83de9be45e8658186d49d887ed39a8fef3e958de96806
+VetClinic sent 50 VC to Beth
+Signature: MEUCIEuT1q6akEVaT1rr3CFKlFoJcFUp6YW7yKnxDNh3DL/sAiEA8/iqJvXrmUi+sTC9UY8cg9yxiRn2Ptc1Tc+P0Y42Cb0=
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEh6/V4a0yzA8goxVM/h1AlHV+Tz3Eaa8JdZF1w1+aCHF4+lt6DPMO+l2W66qFS0wXM2H5q8s31x5hdeohQB1IXg==
+Transaction #4:
+Transaction ID: e462dfe56cf8fdda6c202ad0b1c500cf1cee7a5290a8b481eb6126d521032318
+Beth sent 1 VC to Jerry
+Signature: MEUCIB51NcuS7SJSZCsGepTkvhq7LWYeeEd8fOPp0LnKtq8qAiEAt3o42Hu/AduWEFdJwjtlgzGfuTw7OCQS4rMIiqwKMx0=
+Public Key: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEk9pmbN2zAf8wQAM5kuBVdAWQo3f6TRi+/A7Xuu7gCrSCXBYP74tiiXu+ucL3EAB8pw3dRUoFcOtvJXpJ0OWocA==
+Block was generating for 0 seconds
+N was increased to 5
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

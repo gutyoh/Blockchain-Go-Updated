@@ -31,13 +31,27 @@ class Block {
             return null;
         }
 
-        if (!(strBlock.contains("Block:")
-                && strBlock.contains("Timestamp:"))) {
+        if (!(strBlock.toLowerCase().contains("block")
+                && strBlock.toLowerCase().contains("timestamp"))) {
 
             return null;
         }
 
         Block block = new Block();
+
+        // Get the Block ID from strBlock
+        for (String line : strBlock.split("\n")) {
+            if (line.toLowerCase().startsWith("id:")) {
+                String id = line.split(":")[1].strip().replace("-", "");
+                boolean isNumeric = id.chars().allMatch(Character::isDigit);
+
+                if (!isNumeric) {
+                    throw new BlockParseException("Id should be a number");
+                }
+                block.id = Integer.parseInt(id);
+                break;
+            }
+        }
 
         List<String> lines = strBlock
                 .lines()
@@ -49,159 +63,173 @@ class Block {
             throw new BlockParseException("Every block should contain at least 12 lines of data");
         }
 
-        if (!lines.get(1).toLowerCase().startsWith("created by")) {
-            throw new BlockParseException("Second line of every block should start with \"Created by\"");
-        }
-
-        minerIds.add(lines.get(1));
-
-        if (!lines.get(2).toLowerCase().startsWith("id:")) {
-            throw new BlockParseException("Third line of every block should start with \"Id:\"");
-        }
-
-        String id = lines.get(2).split(":")[1].strip().replace("-", "");
-        boolean isNumeric = id.chars().allMatch(Character::isDigit);
-
-        if (!isNumeric) {
-            throw new BlockParseException("Id should be a number");
-        }
-
-        block.id = Integer.parseInt(id);
-
-        if (!lines.get(3).toLowerCase().startsWith("timestamp:")) {
-            throw new BlockParseException("4-th line of every block should start with \"Timestamp:\"");
-        }
-
-        String timestamp = lines.get(3).split(":")[1].strip().replace("-", "");
-        isNumeric = timestamp.chars().allMatch(Character::isDigit);
-
-
-        if (!isNumeric) {
-            throw new BlockParseException("Timestamp should be a number");
-        }
-
-        block.timestamp = Long.parseLong(timestamp);
-
-        if (!lines.get(4).toLowerCase().startsWith("magic number:")) {
-            throw new BlockParseException("5-th line of every block should start with \"Magic number:\"");
-        }
-
-        String magic = lines.get(4).split(":")[1].strip().replace("-", "");
-        isNumeric = magic.chars().allMatch(Character::isDigit);
-
-        if (!isNumeric) {
-            throw new BlockParseException("Magic number should be a number");
-        }
-
-        block.magic = Long.parseLong(magic);
-
-        if (!lines.get(5).equalsIgnoreCase("hash of the previous block:")) {
-            throw new BlockParseException("6-th line of every block should start with \"Hash of the previous block:\"");
-        }
-
-        if (!lines.get(7).equalsIgnoreCase("hash of the block:")) {
-            throw new BlockParseException("8-th line of every block should start with \"Hash of the block:\"");
-        }
-
-        String prevHash = lines.get(6).strip();
-        String hash = lines.get(8).strip();
-
-        if (!(prevHash.length() == 64 || prevHash.equals("0")) || hash.length() != 64) {
-            throw new BlockParseException("Hash length should be equal to 64 except \"0\"");
-        }
-
-        if (hash.equals(prevHash)) {
-            throw new BlockParseException("The current hash and the previous hash in a block should be different.");
-        }
-
-        if (!hash.startsWith("0".repeat(N))) {
-            throw new BlockParseException("N is " + N + " but hash, " + hash + ", did not start with the correct number of zeros.");
-        }
-
-        block.hash = hash;
-        block.prevHash = prevHash;
-
-        // Check the `Block data` of the first/genesis block:
+        // Check the `Block data` of the `Genesis Block`:
         if (block.id == 1) {
-            if (!lines.get(0).toLowerCase().contains("genesis block")) {
-                throw new BlockParseException(
-                        "First line of the First/Genesis Block should be \"Genesis Block:\"");
+            if (!lines.get(0).toLowerCase().startsWith("genesis block")) {
+                throw new BlockParseException("The first line of the first block in the blockchain should be \"Genesis Block:\" and every subsequent Block's first line should be \"Block:\"" +
+                        "\nYour program instead printed as the first line in Block " + block.id + ": " + "\"" + lines.get(0) + "\"");
             }
 
-            if (!lines.get(9).toLowerCase().startsWith("block data:")) {
-                throw new BlockParseException("10-th line of the First/Genesis Block " +
+            if (!lines.get(1).toLowerCase().startsWith("id:")) {
+                throw new BlockParseException("Second line of the Genesis Block should start with \"Id:\"");
+            }
+
+            if (!lines.get(2).toLowerCase().startsWith("timestamp:")) {
+                throw new BlockParseException("Third line of the Genesis Block should start with \"Timestamp:\"");
+            }
+            String timestamp = lines.get(2).split(":")[1].strip().replace("-", "");
+            boolean isNumeric = timestamp.chars().allMatch(Character::isDigit);
+
+            if (!isNumeric) {
+                throw new BlockParseException("Timestamp should be a number");
+            }
+            block.timestamp = Long.parseLong(timestamp);
+
+            if (!lines.get(3).toLowerCase().startsWith("magic number:")) {
+                throw new BlockParseException("4-th line of the Genesis Block should start with \"Magic number:\"");
+            }
+            String magic = lines.get(3).split(":")[1].strip().replace("-", "");
+            isNumeric = magic.chars().allMatch(Character::isDigit);
+
+            if (!isNumeric) {
+                throw new BlockParseException("Magic number should be a number");
+            }
+            block.magic = Long.parseLong(magic);
+
+            if (!lines.get(4).equalsIgnoreCase("hash of the previous block:")) {
+                throw new BlockParseException("5-th line of the Genesis Block should start with \"Hash of the previous block:\"");
+            }
+
+            if (!lines.get(6).equalsIgnoreCase("hash of the block:")) {
+                throw new BlockParseException("7-th line of the Genesis Block should start with \"Hash of the block:\"");
+            }
+
+            String prevHash = lines.get(5).strip();
+            String hash = lines.get(7).strip();
+
+            if (!(prevHash.length() == 64 || prevHash.equals("0")) || hash.length() != 64) {
+                throw new BlockParseException("Hash length should be equal to 64 except \"0\"");
+            }
+
+            if (hash.equals(prevHash)) {
+                throw new BlockParseException("The current hash and the previous hash in a block should be different.");
+            }
+
+            if (!hash.startsWith("0".repeat(N))) {
+                throw new BlockParseException("N is " + N + " but hash, " + hash + ", did not start with the correct number of zeros.");
+            }
+            block.hash = hash;
+            block.prevHash = prevHash;
+
+            if (!lines.get(8).toLowerCase().startsWith("block data:")) {
+                throw new BlockParseException("9-th line of the Genesis Block " +
                         "should start with \"Block data:\""
 
                         + "\n" + "Your program instead printed in Block " +
                         block.id + " an unexpected line: " + lines.get(9));
             }
 
-            if (!lines.get(10).toLowerCase().startsWith("transaction")) {
-                throw new BlockParseException("11-th line of the First/Genesis Block " +
-                        "should start with \"Transaction\"");
+            if (!lines.get(9).toLowerCase().contains("no transactions")) {
+                throw new BlockParseException("10-th line of the Genesis Block " +
+                        "should be \"No transactions\"");
             }
 
-            if (!lines.get(10).toLowerCase().contains("coinbase")) {
-                throw new BlockParseException("11-th line of the First/Genesis Block " +
-                        "should contain \"(Coinbase)\" e.g., \"Transaction #1 (Coinbase):\"");
-            }
-
-            if (!lines.get(11).toLowerCase().startsWith("transaction id")) {
-                throw new BlockParseException("12-th line of the First/Genesis block " +
-                        "should start with \"Transaction ID:\"");
-            }
-
-            // Get the Transaction ID value after the `:` colon in the string `Transaction ID:`
-            String[] regex = {":"};
-            String txId = lines.get(11).split(regex[0])[1].strip();
-
-            // Check if the Transaction ID is a double SHA256 hash
-            if (!(txId.length() == 64 && txId.matches("[a-zA-Z0-9]+"))) {
-                throw new BlockParseException("Transaction ID should be a double SHA256 hash created using the "
-                        + "\"From user\", \"To user\" and \"VC Amount\" values of the transaction."
-                        + "Your program instead printed in Block " + block.id +
-                        " an incorrect Transaction ID: " + txId);
-            }
-
-            if (!lines.get(12).toLowerCase().startsWith("blockchain sent 100 vc")) {
-                throw new BlockParseException("13-th line of the First/Genesis Block " +
-                        "should start with \"Blockchain sent 100 VC\" followed by the user name of the miner"
-                        + " who mined the block, e.g., \"Blockchain sent 100 VC to miner1\"");
-            }
-
-            if (!(lines.get(13).toLowerCase().contains("block") || lines.get(13).toLowerCase().contains("generating"))) {
-                throw new BlockParseException("14-th line of the First/Genesis Block " +
+            if (!(lines.get(10).toLowerCase().contains("block") || lines.get(10).toLowerCase().contains("generating"))) {
+                throw new BlockParseException("11-th line of the Genesis Block " +
                         "should say how long the block was generating for! "
                         + "(Use the example's format)"
 
                         + "\n" + "Your program instead printed in Block " +
-                        block.id + " an unexpected line: " + lines.get(13));
+                        block.id + " an unexpected line: " + lines.get(10));
             }
 
-            if (!lines.get(14).toUpperCase().startsWith("N ")) {
-                throw new BlockParseException("15-th line of the First/Genesis Block " +
+            if (!lines.get(11).toUpperCase().startsWith("N ")) {
+                throw new BlockParseException("12-th line of the Genesis Block " +
                         "should be state what happened to N in the format given."
 
                         + "\n" + "Your program instead printed in Block " +
-                        block.id + " an unexpected line: " + lines.get(14));
+                        block.id + " an unexpected line: " + lines.get(11));
             }
 
-            if (14 != lines.size() - 1) {
+            if (lines.get(11).toLowerCase().contains("increase")) {
+                N += 1;
+            } else if (lines.get(11).toLowerCase().contains("decrease")) {
+                N -= 1;
+                if (N < 0) {
+                    throw new BlockParseException("N was decreased below zero!");
+                }
+            } else if (!lines.get(11).toLowerCase().contains("same")) {
+                throw new BlockParseException("The last line of every block" +
+                        "must state N increased, decreased, or stayed the same.");
+            }
+
+            if (11 != lines.size() - 1) {
                 throw new BlockParseException("Your program printed in Block " + block.id +
                         " after the line: \"N was increased/decreased/stays the same\"\n" +
-                        "an additional and unexpected line: " + "\"" + lines.get(14) + "\"");
+                        "an additional and unexpected line: " +  lines.get(lines.size() - 1));
             }
         }
 
-        // Then check the `Block data of the remaining blocks:`
-        if (1 < block.id && block.id < 5) {
+        // Check the `Block data of the subsequent blocks:`
+        if (block.id > 1 && block.id <=5) {
             if (!lines.get(0).toLowerCase().startsWith("block")) {
-                throw new BlockParseException(
-                        "First line of every other Block should start with \"Block\"");
+                throw new BlockParseException("The first line of the first block in the blockchain should be \"Genesis Block:\" and every subsequent Block's first line should be \"Block:\"" +
+                        "\nYour program instead printed as the first line in Block " + block.id + ": " + "\"" + lines.get(0) + "\"");
             }
 
+            if (!lines.get(1).toLowerCase().startsWith("created by")) {
+                throw new BlockParseException("Second line of every subsequent Block should start with \"Created by\"");
+            }
+            minerIds.add(lines.get(1));
+
+            if (!lines.get(3).toLowerCase().startsWith("timestamp:")) {
+                throw new BlockParseException("4-th line of every subsequent Block should start with \"Timestamp:\"");
+            }
+            String timestamp = lines.get(3).split(":")[1].strip().replace("-", "");
+            boolean isNumeric = timestamp.chars().allMatch(Character::isDigit);
+
+            if (!isNumeric) {
+                throw new BlockParseException("Timestamp should be a number");
+            }
+            block.timestamp = Long.parseLong(timestamp);
+
+            if (!lines.get(4).toLowerCase().startsWith("magic number:")) {
+                throw new BlockParseException("5-th line of every subsequent Block should start with \"Magic number:\"");
+            }
+            String magic = lines.get(4).split(":")[1].strip().replace("-", "");
+            isNumeric = magic.chars().allMatch(Character::isDigit);
+
+            if (!isNumeric) {
+                throw new BlockParseException("Magic number should be a number");
+            }
+            block.magic = Long.parseLong(magic);
+
+            if (!lines.get(5).equalsIgnoreCase("hash of the previous block:")) {
+                throw new BlockParseException("6-th line of every subsequent Block should start with \"Hash of the previous block:\"");
+            }
+
+            if (!lines.get(7).equalsIgnoreCase("hash of the block:")) {
+                throw new BlockParseException("8-th line of every subsequent Block should start with \"Hash of the block:\"");
+            }
+            String prevHash = lines.get(6).strip();
+            String hash = lines.get(8).strip();
+
+            if (!(prevHash.length() == 64 || prevHash.equals("0")) || hash.length() != 64) {
+                throw new BlockParseException("Hash length should be equal to 64 except \"0\"");
+            }
+
+            if (hash.equals(prevHash)) {
+                throw new BlockParseException("The current hash and the previous hash in a block should be different.");
+            }
+
+            if (!hash.startsWith("0".repeat(N))) {
+                throw new BlockParseException("N is " + N + " but hash, " + hash + ", did not start with the correct number of zeros.");
+            }
+            block.hash = hash;
+            block.prevHash = prevHash;
+
             if (!lines.get(9).toLowerCase().startsWith("block data:")) {
-                throw new BlockParseException("10-th line of every other Block should start with \"Block data:\""
+                throw new BlockParseException("10-th line of every subsequent Block should start with \"Block data:\""
 
                         + "\n" + "Your program instead printed in Block " +
                         block.id + " an unexpected line: " + lines.get(9));
@@ -213,7 +241,8 @@ class Block {
                 i++;
             }
 
-            // Here is the line with the coinbase transaction — `Transaction #1 (Coinbase):`
+            // After the loop, the first line we reach should be
+            // the line with the coinbase transaction — `Transaction #1 (Coinbase):`
             if (!lines.get(i).toLowerCase().startsWith("transaction")) {
                 throw new BlockParseException("After the line with \"Block data:\" " +
                         "the next line should contain the coinbase transaction "
@@ -400,7 +429,7 @@ class Block {
             if (i != lines.size() - 1) {
                 throw new BlockParseException("Your program printed in Block " + block.id +
                         " after the line: \"N was increased/decreased/stays the same\"\n" +
-                        "an additional and unexpected line: " + "\"" + lines.get(lines.size() - 1) + "\"");
+                        "an additional and unexpected line: " + lines.get(lines.size() - 1));
             }
 
             if (!lines.get(i).toUpperCase().startsWith("N ")) {
@@ -423,7 +452,6 @@ class Block {
                         + "must state N increased, decreased, or stayed the same.");
             }
         }
-
         return block;
     }
 
@@ -483,7 +511,31 @@ class TransactionOutputs {
             // Block 5
             Arrays.asList("IroncladConstruction remaining balance: 70 VC", "Nick new balance: 180 VC"),
             Arrays.asList("Nick remaining balance: 5 VC", "FerrariShop new balance: 275 VC"),
-            Arrays.asList("Nick remaining balance: 1 VC", "FuelStation new balance: 104 VC")
+            Arrays.asList("Nick remaining balance: 1 VC", "FuelStation new balance: 104 VC"),
+
+            // Test case 2
+            // Block 2
+            Arrays.asList("Rick remaining balance: 90 VC", "Morty new balance: 110 VC"),
+            Arrays.asList("User Rick doesn't have enough VC to send", "Rick current balance: 90 VC"),
+            Arrays.asList("Rick remaining balance: 70 VC", "Beth new balance: 120 VC"),
+            Arrays.asList("Rick remaining balance: 40 VC", "Summer new balance: 130 VC"),
+            Arrays.asList("Jerry remaining balance: 0 VC", "Rick new balance: 140 VC"),
+
+            // Block 3
+            Arrays.asList("Morty remaining balance: 108 VC", "ShoneysRestaurant new balance: 102 VC"),
+            Arrays.asList("Summer remaining balance: 120 VC", "SephoraShop new balance: 110 VC"),
+            Arrays.asList("Beth remaining balance: 100 VC", "GucciShop new balance: 120 VC"),
+            Arrays.asList("User Jerry doesn't have enough VC to send", "Jerry current balance: 0 VC"),
+
+            // Block 4
+            Arrays.asList("PlumbusCompany remaining balance: 99 VC", "Jerry new balance: 1 VC"),
+            Arrays.asList("User Jerry doesn't have enough VC to send", "Jerry current balance: 1 VC"),
+            Arrays.asList("You can't send VC from one user to the same user"),
+
+            // Block 5
+            Arrays.asList("VetClinic remaining balance: 50 VC", "Beth new balance: 150 VC"),
+            Arrays.asList("Beth remaining balance: 149 VC", "Jerry new balance: 2 VC"),
+            Arrays.asList("Beth remaining balance: 130 VC", "WineShop new balance: 119 VC")
     );
 }
 
@@ -610,7 +662,11 @@ class Transaction {
         List<Transaction> transactions = new ArrayList<Transaction>();
 
         for (String strTransaction : strTransactions) {
-            if (strTransaction.toLowerCase().startsWith("genesis block") || strTransaction.toLowerCase().startsWith("block")) {
+            if (strTransaction.toLowerCase().startsWith("genesis block")) {
+                continue;
+            }
+
+            if (strTransaction.toLowerCase().startsWith("block")) {
                 Transaction.blockId = Integer.parseInt(strTransaction.split("\n")[2].split(":")[1].trim());
                 continue;
             }
@@ -683,12 +739,63 @@ public class BlockchainTest extends StageTest<Clue> {
             4
             """;
 
+    String testTxInput2 = """
+            5
+            Rick
+            Morty
+            10
+            Rick
+            Beth
+            100
+            Rick
+            Beth
+            20
+            Rick
+            Summer
+            30
+            Jerry
+            Rick
+            100
+            4
+            Morty
+            ShoneysRestaurant
+            2
+            Summer
+            SephoraShop
+            10
+            Beth
+            GucciShop
+            20
+            Jerry
+            Beth
+            1
+            3
+            PlumbusCompany
+            Jerry
+            1
+            Jerry
+            Beth
+            5
+            Jerry
+            Jerry
+            10
+            3
+            VetClinic
+            Beth
+            50
+            Beth
+            Jerry
+            1
+            Beth
+            WineShop
+            19
+            """;
+
     @Override
     public List<TestCase<Clue>> generate() {
         return List.of(
-                new TestCase<Clue>()
-                        .setInput(testTxInput1)
-                        .setAttach(new Clue(0))
+                new TestCase<Clue>().setInput(testTxInput1).setAttach(new Clue(0)),
+                new TestCase<Clue>().setInput(testTxInput2).setAttach(new Clue(0))
         );
     }
 
@@ -731,12 +838,14 @@ public class BlockchainTest extends StageTest<Clue> {
 
             if (curr.id + 1 != next.id) {
                 return new CheckResult(false,
-                        "Id`s of blocks should increase by 1");
+                        "Id's of blocks should increase by 1");
             }
 
             if (next.timestamp < curr.timestamp) {
+                System.out.println(next.timestamp);
+                System.out.println(curr.timestamp);
                 return new CheckResult(false,
-                        "Timestamp`s of blocks should increase");
+                        "Timestamp's of blocks should increase");
             }
 
             if (!next.prevHash.equals(curr.hash)) {

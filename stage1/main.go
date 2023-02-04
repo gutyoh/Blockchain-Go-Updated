@@ -1,5 +1,3 @@
-// stage 1
-
 package main
 
 import (
@@ -23,10 +21,13 @@ func (b *Block) Init(timestamp time.Time, previousHash string) {
 }
 
 func (b *Block) CalculateHash() string {
-	//sum := sha256.Sum256([]byte(b.PreviousHash + b.Timestamp.String()))
-	//return fmt.Sprintf("%x", sum)
+	var (
+		blockID           = fmt.Sprintf("%d", b.ID)
+		timestamp         = fmt.Sprintf("%d", b.Timestamp.UnixMilli())
+		previousBlockHash = b.PreviousHash
+	)
 	sha256Hash := sha256.New()
-	sha256Hash.Write([]byte(fmt.Sprintf("%d%s%d", b.ID, b.PreviousHash, b.Timestamp.UnixMilli())))
+	sha256Hash.Write([]byte(blockID + timestamp + previousBlockHash))
 
 	return fmt.Sprintf("%x", sha256Hash.Sum(nil))
 }
