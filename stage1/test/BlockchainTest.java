@@ -40,11 +40,6 @@ class Block {
                     "contain 7 lines of data");
         }
 
-//        if (!lines.get(0).equals("Block:")) {
-//            throw new BlockParseException("First line of every Block " +
-//                    "should be \"Block:\"");
-//        }
-
         if (!lines.get(1).toLowerCase().startsWith("id:")) {
             throw new BlockParseException("Second line of every Block " +
                     "should start with \"Id:\"");
