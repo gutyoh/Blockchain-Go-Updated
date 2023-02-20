@@ -27,7 +27,7 @@ type Block struct {
 	Timestamp    time.Time
 	PreviousHash string
 	Hash         string
-	MagicNumber  int64
+	MagicNumber  int32
 	BuildTime    int64
 	Nonce        int
 }
@@ -39,18 +39,16 @@ func (b *Block) Init(timestamp time.Time, previousHash string) {
 	b.Hash = b.CalculateHash()
 	b.Nonce = 0
 }
-
 func (b *Block) CalculateHash() string {
-	blockID := fmt.Sprintf("%d", b.ID)
-	previousHash := fmt.Sprintf("%s", b.PreviousHash)
-	timestamp := fmt.Sprintf("%d", b.Timestamp.UnixMilli())
-	nonce := fmt.Sprintf("%d", b.Nonce)
-	magicNumber := fmt.Sprintf("%d", b.MagicNumber)
-	//sum := sha256.Sum256([]byte(b.PreviousHash + b.Timestamp.String() + nonce + magicNumber))
-	//return fmt.Sprintf("%x", sum)
-
+	var (
+		blockID           = fmt.Sprintf("%d", b.ID)
+		timestamp         = fmt.Sprintf("%d", b.Timestamp.UnixMilli())
+		magicNumber       = fmt.Sprintf("%d", b.MagicNumber)
+		nonce             = fmt.Sprintf("%d", b.Nonce)
+		previousBlockHash = b.PreviousHash
+	)
 	sha256Hash := sha256.New()
-	sha256Hash.Write([]byte(blockID + previousHash + timestamp + nonce + magicNumber))
+	sha256Hash.Write([]byte(blockID + timestamp + magicNumber + nonce + previousBlockHash))
 
 	return fmt.Sprintf("%x", sha256Hash.Sum(nil))
 }
@@ -95,26 +93,27 @@ func (bc *Blockchain) Init(difficulty int) {
 }
 
 func (bc *Blockchain) CreateGenesisBlock() Block {
-	//timestamp := time.Now()
-	//magicNumber := rand.NewSource(timestamp.UnixNano())
-	//hash := sha256.Sum256([]byte("Genesis block" + fmt.Sprintf("%d", magicNumber)))
-
 	blockID := fmt.Sprintf("%d", 1)
 	timestamp := fmt.Sprintf("%d", time.Now().UnixMilli())
-	magicNumber := rand.NewSource(time.Now().UnixMilli())
+	magicNumber := rand.Int31()
 
 	sha256Hash := sha256.New()
-	sha256Hash.Write([]byte(blockID + timestamp + fmt.Sprintf("%d", magicNumber.Int63())))
+	sha256Hash.Write([]byte(blockID + timestamp + fmt.Sprintf("%d", magicNumber)))
 	hash := sha256Hash.Sum(nil)
 
-	// the difficulty is a number of zeros the hash must start with
+	// The difficulty is the number of zeros the hash must start with
 	difficulty := strings.Repeat("0", bc.Difficulty)
 
 	genesisBlockHash := difficulty + substr(fmt.Sprintf("%x", hash), bc.Difficulty,
 		len(fmt.Sprintf("%x", hash))-bc.Difficulty)
 
-	return Block{ID: 1, Timestamp: time.Now(), PreviousHash: "0",
-		Hash: genesisBlockHash, MagicNumber: magicNumber.Int63()}
+	return Block{
+		ID:           1,
+		Timestamp:    time.Now(),
+		PreviousHash: "0",
+		Hash:         genesisBlockHash,
+		MagicNumber:  magicNumber,
+	}
 }
 
 func main() {
@@ -129,8 +128,11 @@ func main() {
 		block := new(Block)
 		start := time.Now()
 		block.ID = i + 1
+
 		block.Timestamp = time.Now()
-		block.MagicNumber = rand.NewSource(block.Timestamp.UnixNano()).Int63()
+		rand.Seed(block.Timestamp.UnixMilli())
+		block.MagicNumber = rand.Int31()
+
 		block.PreviousHash = hyperChain.Chain[len(hyperChain.Chain)-1].Hash
 		block.MineBlock(hyperChain.Difficulty)
 		end := time.Now()

@@ -154,12 +154,12 @@ class Block {
             if (9 != lines.size() - 1) {
                 throw new BlockParseException("Your program printed in Block " + block.id +
                         " after the line: \"N was increased/decreased/stays the same\"\n" +
-                        "an additional and unexpected line: " +  lines.get(lines.size() - 1));
+                        "an additional and unexpected line: " + lines.get(lines.size() - 1));
             }
         }
 
         // Check the `Block data of the subsequent blocks:`
-        if (block.id > 1 && block.id <=5) {
+        if (block.id > 1 && block.id <= 5) {
             if (!lines.get(0).toLowerCase().startsWith("block")) {
                 throw new BlockParseException("The first line of the first block in the blockchain should be \"Genesis Block:\" and every subsequent Block's first line should be \"Block:\"" +
                         "\nYour program instead printed as the first line in Block " + block.id + ": " + "\"" + lines.get(0) + "\"");
@@ -248,7 +248,7 @@ class Block {
             if (10 != lines.size() - 1) {
                 throw new BlockParseException("Your program printed in Block " + block.id +
                         " after the line: \"N was increased/decreased/stays the same\"\n" +
-                        "an additional and unexpected line: " +  lines.get(lines.size() - 1));
+                        "an additional and unexpected line: " + lines.get(lines.size() - 1));
             }
         }
 
@@ -273,7 +273,7 @@ class Block {
 
         String firstMiner = minerIds.get(0);
         minerIds.removeIf(s -> Objects.equals(s, firstMiner));
-        if (minerIds.size() == 0){
+        if (minerIds.size() == 0) {
             throw new BlockParseException("All blocks are mined by a single miner!");
         }
 
@@ -283,6 +283,7 @@ class Block {
 
 class Clue {
     String zeros;
+
     Clue(int n) {
         zeros = "0".repeat(n);
     }

@@ -48,17 +48,21 @@ func (b *Block) CalculateHash() string {
 		previousBlockHash = b.PreviousHash
 	)
 	sha256Hash := sha256.New()
-	sha256Hash.Write([]byte(blockID + previousBlockHash + timestamp + magicNumber))
+	sha256Hash.Write([]byte(blockID + timestamp + magicNumber + previousBlockHash))
 
 	return fmt.Sprintf("%x", sha256Hash.Sum(nil))
 }
 
 func (b *Block) GenerateMessageID(data string) string {
-	binaryData := []byte(data)
-	sha256Hash1 := sha256.Sum256(binaryData)
-	sha256Hash2 := sha256.Sum256(sha256Hash1[:])
+	binaryData := []byte(fmt.Sprintf("%d%d%s", b.Timestamp.UnixMilli(), rand.Int31(), data))
 
-	return fmt.Sprintf("%x", sha256Hash2)
+	sha256Hash1 := sha256.New()
+	sha256Hash1.Write(binaryData)
+
+	sha256Hash2 := sha256.New()
+	sha256Hash2.Write(sha256Hash1.Sum(nil))
+
+	return fmt.Sprintf("%x", sha256Hash2.Sum(nil))
 }
 
 func (b *Block) SignMessage(data string) string {
@@ -130,12 +134,7 @@ func (bc *Blockchain) GetBlockData() error {
 	msgSignature := lastBlock.SignMessage(msgContent)
 
 	// Get the message public key
-	msgPubKey := lastBlock.GetPrivateKey().PublicKey
-	bytes, err := x509.MarshalPKIXPublicKey(&msgPubKey)
-	if err != nil {
-		log.Fatal(err)
-	}
-	msgPubKeyString := base64.StdEncoding.EncodeToString(bytes)
+	msgPubKeyString := bc.GetPublicKey(lastBlock)
 
 	// Add the "pending message" to the block memory pool of the blockchain
 	bc.MemPool = append(bc.MemPool, Message{
@@ -145,6 +144,16 @@ func (bc *Blockchain) GetBlockData() error {
 		PublicKey: msgPubKeyString,
 	})
 	return nil
+}
+
+func (bc *Blockchain) GetPublicKey(block *Block) string {
+	msgPublicKey := block.GetPrivateKey().PublicKey
+	bytes, err := x509.MarshalPKIXPublicKey(&msgPublicKey)
+	if err != nil {
+		log.Fatal(err)
+	}
+	msgPubKeyString := base64.StdEncoding.EncodeToString(bytes)
+	return msgPubKeyString
 }
 
 func (bc *Blockchain) Print(nState string) {

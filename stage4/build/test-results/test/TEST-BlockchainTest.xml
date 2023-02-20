@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BlockchainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-04T21:42:48" hostname="SERVER-GUTY" time="2.195">
+<testsuite name="BlockchainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-20T14:54:29" hostname="SERVER-GUTY" time="2.203">
   <properties/>
-  <testcase name="start" classname="BlockchainTest" time="2.195"/>
+  <testcase name="start" classname="BlockchainTest" time="2.203"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
 Genesis Block:
 Id: 1
-Timestamp: 1675546969587
-Magic number: 590020443
+Timestamp: 1676904870293
+Magic number: 1183526624
 Hash of the previous block:
 0
 Hash of the block:
-b3df6af8316675cefeb2cb5d7be2223cc92787d949868dcbf9c23a3ad48eacfd
+daa6b3c1e5cdd43906cf2ccf5432d87962cf82c509535a5e5276edeb88866c75
 Block data:
 No messages
 Block was generating for 0 seconds
@@ -21,14 +21,14 @@ Enter a single message to send to the Blockchain:
 > Tom: Hey, I'm first
 
 Block:
-Created by miner10
+Created by miner8
 Id: 2
-Timestamp: 1675546969642
-Magic number: 298751815
+Timestamp: 1676904870358
+Magic number: 707284409
 Hash of the previous block:
-b3df6af8316675cefeb2cb5d7be2223cc92787d949868dcbf9c23a3ad48eacfd
+daa6b3c1e5cdd43906cf2ccf5432d87962cf82c509535a5e5276edeb88866c75
 Hash of the block:
-0b30f7db52ab7206408937b8db91d13108fbebdc9b2c392b7c135dd70a3fe204
+08afad3a4c83b20ee057672791f7cd40c8d6881a6a386fa20f6790994ba1a442
 Block data:
 Tom: Hey, I'm first
 Block was generating for 0 seconds
@@ -38,14 +38,14 @@ Enter a single message to send to the Blockchain:
 > Alice: It's not fair! You always will be first because it is your blockchain!
 
 Block:
-Created by miner2
+Created by miner6
 Id: 3
-Timestamp: 1675546969694
-Magic number: 253045561
+Timestamp: 1676904870445
+Magic number: 459178128
 Hash of the previous block:
-0b30f7db52ab7206408937b8db91d13108fbebdc9b2c392b7c135dd70a3fe204
+08afad3a4c83b20ee057672791f7cd40c8d6881a6a386fa20f6790994ba1a442
 Hash of the block:
-00c55cf94150c7d38ec3d1b7d8a2c73a5de022e9e60c324633a9248631852037
+0025f980e497b2fe2f56917b95fecaba3a62015142e316857a0caaba55ddeac0
 Block data:
 Alice: It's not fair! You always will be first because it is your blockchain!
 Block was generating for 0 seconds
@@ -55,14 +55,14 @@ Enter a single message to send to the Blockchain:
 > Alice: Anyway, thank you for this amazing chat
 
 Block:
-Created by miner1
+Created by miner3
 Id: 4
-Timestamp: 1675546969745
-Magic number: 163285883
+Timestamp: 1676904870514
+Magic number: 1415632896
 Hash of the previous block:
-00c55cf94150c7d38ec3d1b7d8a2c73a5de022e9e60c324633a9248631852037
+0025f980e497b2fe2f56917b95fecaba3a62015142e316857a0caaba55ddeac0
 Hash of the block:
-000c21135aa31d40c5809cde60720f142dece6cbdea2f7418c0356438c1efa8b
+000c7de2f99fec2085e7528ffd0046c1c5030f4d89ecf76d71e4bcd64e74fb84
 Block data:
 Alice: Anyway, thank you for this amazing chat
 Block was generating for 0 seconds
@@ -72,14 +72,14 @@ Enter a single message to send to the Blockchain:
 > Tom: You're welcome, Alice :)
 
 Block:
-Created by miner3
+Created by miner4
 Id: 5
-Timestamp: 1675546969818
-Magic number: 1881367537
+Timestamp: 1676904870624
+Magic number: 1101916478
 Hash of the previous block:
-000c21135aa31d40c5809cde60720f142dece6cbdea2f7418c0356438c1efa8b
+000c7de2f99fec2085e7528ffd0046c1c5030f4d89ecf76d71e4bcd64e74fb84
 Hash of the block:
-00007be77b3cdd99cdd7ef664e30f012b319111f8d65fd231b6a96f5ffffca98
+0000e50c1bfe53c8c4f802f40e659af9935fb0bb98b80b1203949f7e90b960e5
 Block data:
 Tom: You're welcome, Alice :)
 Block was generating for 0 seconds
@@ -88,12 +88,12 @@ N was increased to 5
 Start test 2?[0m
 Genesis Block:
 Id: 1
-Timestamp: 1675546970192
-Magic number: 1524562265
+Timestamp: 1676904870944
+Magic number: 1317321498
 Hash of the previous block:
 0
 Hash of the block:
-1bcbd323dcdec6ed2320f42d519a0e42ee03d5de379211f64fa0a1050cce0593
+c793d1c05e357659d0cff5c30e6d6ccee4f43f848f471604d7a0707604e34b9e
 Block data:
 No messages
 Block was generating for 0 seconds
@@ -103,14 +103,14 @@ Enter a single message to send to the Blockchain:
 > Tom: Hey, I'm first once again!
 
 Block:
-Created by miner8
+Created by miner2
 Id: 2
-Timestamp: 1675546970224
-Magic number: 922457829
+Timestamp: 1676904870989
+Magic number: 1644884528
 Hash of the previous block:
-1bcbd323dcdec6ed2320f42d519a0e42ee03d5de379211f64fa0a1050cce0593
+c793d1c05e357659d0cff5c30e6d6ccee4f43f848f471604d7a0707604e34b9e
 Hash of the block:
-017d8f6007af0f43b264acf6fd5a058477b1ac01829e76bcbca63f6f3658d62b
+011942695a935d1220bd28356682d2f860bae24f8a7dc152be557ab054190f30
 Block data:
 Tom: Hey, I'm first once again!
 Block was generating for 0 seconds
@@ -120,14 +120,14 @@ Enter a single message to send to the Blockchain:
 > Nick: Hey Tom, nice Blockchain chat you created!
 
 Block:
-Created by miner8
+Created by miner4
 Id: 3
-Timestamp: 1675546970257
-Magic number: 1824816022
+Timestamp: 1676904871048
+Magic number: 1713286012
 Hash of the previous block:
-017d8f6007af0f43b264acf6fd5a058477b1ac01829e76bcbca63f6f3658d62b
+011942695a935d1220bd28356682d2f860bae24f8a7dc152be557ab054190f30
 Hash of the block:
-00108d742bdca4d01825288a231658a10a4dcefe10c365467063c296275d1a39
+00b735dd78041f39f966aabb44ed15f8108337bc69ee7033466b578350310fc8
 Block data:
 Nick: Hey Tom, nice Blockchain chat you created!
 Block was generating for 0 seconds
@@ -137,14 +137,14 @@ Enter a single message to send to the Blockchain:
 > Tom: Thanks, Nick! It was a lot of fun to create it!
 
 Block:
-Created by miner1
+Created by miner9
 Id: 4
-Timestamp: 1675546970302
-Magic number: 1980301461
+Timestamp: 1676904871096
+Magic number: 352504844
 Hash of the previous block:
-00108d742bdca4d01825288a231658a10a4dcefe10c365467063c296275d1a39
+00b735dd78041f39f966aabb44ed15f8108337bc69ee7033466b578350310fc8
 Hash of the block:
-00053fbdc9ab85e502cf1da7c09074ad1564a63f58a6b48bfd11ad936bb818df
+000dad83bc70dcf11e6122af0f6b02f80fd41c70f4e75d39dc883346763f04f6
 Block data:
 Tom: Thanks, Nick! It was a lot of fun to create it!
 Block was generating for 0 seconds
@@ -154,14 +154,14 @@ Enter a single message to send to the Blockchain:
 > Tom: Anyways, I have to leave for a meeting now. Enjoy the blockchain chat. Bye!
 
 Block:
-Created by miner8
+Created by miner3
 Id: 5
-Timestamp: 1675546970365
-Magic number: 679899092
+Timestamp: 1676904871183
+Magic number: 1920171089
 Hash of the previous block:
-00053fbdc9ab85e502cf1da7c09074ad1564a63f58a6b48bfd11ad936bb818df
+000dad83bc70dcf11e6122af0f6b02f80fd41c70f4e75d39dc883346763f04f6
 Hash of the block:
-00004f185f3337a759c19cca4e3beb7343380795f8ed6cdcea7ad0d2b8e927e8
+000069d4e3ffff6b85248c57a6ff375e1ee8850be84160c0a9af0171932543a3
 Block data:
 Tom: Anyways, I have to leave for a meeting now. Enjoy the blockchain chat. Bye!
 Block was generating for 0 seconds

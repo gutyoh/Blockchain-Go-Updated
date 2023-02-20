@@ -5,52 +5,52 @@
 
 Genesis Block:
 Id: 1
-Timestamp: 1675546901534
-!Magic number: 188990871358488300
+Timestamp: 1676904890265
+Magic number: 1298498081
 Hash of the previous block:
 0
 Hash of the block:
-A184e4e455f379c97e436713620fe549d45b2f35e6f8473ea16b3814735ac00a9
+Adbbeaf01336e3cd3321a3a289b6db06660f7f68887c528fd30319b79e494aa6e
 #Block was generating for 0 seconds
 
 Block:
 Id: 2
-Timestamp: 1675546901534
-"Magic number: 6183656111609323357
+Timestamp: 1676904890265
+Magic number: 1869070036
 Hash of the previous block:
-A184e4e455f379c97e436713620fe549d45b2f35e6f8473ea16b3814735ac00a9
+Adbbeaf01336e3cd3321a3a289b6db06660f7f68887c528fd30319b79e494aa6e
 Hash of the block:
-A1c08710efbf6b317ef9bb26d2fd1950b7f2aff6b2d63b301e890ae4fe095cf27
+Aa8f25a7b5c72b6237f8bfdffc004b2a1c2de0de5fcc8fb931e5022ee34c68bdb
 #Block was generating for 0 seconds
 
 Block:
 Id: 3
-Timestamp: 1675546901535
-"Magic number: 6540353348706572659
+Timestamp: 1676904890265
+Magic number: 1869070036
 Hash of the previous block:
-A1c08710efbf6b317ef9bb26d2fd1950b7f2aff6b2d63b301e890ae4fe095cf27
+Aa8f25a7b5c72b6237f8bfdffc004b2a1c2de0de5fcc8fb931e5022ee34c68bdb
 Hash of the block:
-Adfd49d6083504951f791cb6166a0bb0664c8239b04b6f95843d4319685d826f4
+Ac0338ba68175e8c222883b8aed22e96425bec2e3d488f777efa37c20c11fa95e
 #Block was generating for 0 seconds
 
 Block:
 Id: 4
-Timestamp: 1675546901535
-"Magic number: 6540353348706572659
+Timestamp: 1676904890265
+Magic number: 1869070036
 Hash of the previous block:
-Adfd49d6083504951f791cb6166a0bb0664c8239b04b6f95843d4319685d826f4
+Ac0338ba68175e8c222883b8aed22e96425bec2e3d488f777efa37c20c11fa95e
 Hash of the block:
-A365239bc143d618f28c17a90a0a134107d467c0c91ffb59852b2089ed5dd58b9
+A41bc862d0e07e670d845bcbacc2bdd19dbbe92c4ae989efdb0e8df8dd3acae07
 #Block was generating for 0 seconds
 
 Block:
 Id: 5
-Timestamp: 1675546901535
-"Magic number: 6540353348706572659
+Timestamp: 1676904890265
+Magic number: 1869070036
 Hash of the previous block:
-A365239bc143d618f28c17a90a0a134107d467c0c91ffb59852b2089ed5dd58b9
+A41bc862d0e07e670d845bcbacc2bdd19dbbe92c4ae989efdb0e8df8dd3acae07
 Hash of the block:
-Aac48856cdfe7a1953b4922267324bf140f9651ad1738b7ef3897599ae8d40b12
+A62b5a95bd53ea8a32ca655c386e2483e43c418b11f641f7f9f4132c63acf3336
 #Block was generating for 0 seconds
 [1;31m
 Start test 2[0m
@@ -59,52 +59,52 @@
 
 Genesis Block:
 Id: 1
-Timestamp: 1675546901926
-"Magic number: 7751250166183397775
+Timestamp: 1676904890700
+Magic number: 1298498081
 Hash of the previous block:
 0
 Hash of the block:
-A0ddc342fd79f0ee6587f34ece0efe1bee44b11df084c2a909db19e806dc0ad48
+A0d5ae9606b903473b7c87c8cf45ae84ef2ef5fdf76e324b267bfac427fd56ba9
 #Block was generating for 0 seconds
 
 Block:
 Id: 2
-Timestamp: 1675546901926
-"Magic number: 2683476401329596032
+Timestamp: 1676904890700
+Magic number: 1066793542
 Hash of the previous block:
-A0ddc342fd79f0ee6587f34ece0efe1bee44b11df084c2a909db19e806dc0ad48
+A0d5ae9606b903473b7c87c8cf45ae84ef2ef5fdf76e324b267bfac427fd56ba9
 Hash of the block:
-A0ec5f560fa6529a034df434f49fe12ef60ed5f58d0f1bbd1af3fe762fede5bd7
+A04a2e4a99ea09c6569d220b7eeaab7e1c2f100942620019e4cdfc6f89bd965f8
 #Block was generating for 0 seconds
 
 Block:
 Id: 3
-Timestamp: 1675546901926
-"Magic number: 2683476401329596032
+Timestamp: 1676904890700
+Magic number: 1066793542
 Hash of the previous block:
-A0ec5f560fa6529a034df434f49fe12ef60ed5f58d0f1bbd1af3fe762fede5bd7
+A04a2e4a99ea09c6569d220b7eeaab7e1c2f100942620019e4cdfc6f89bd965f8
 Hash of the block:
-A0fc247cacf7cb504e958afb8f7b5b7b0f000555d396175cad0784d1ebd3af94c
+A0a6898829affda17df6d3a6c5a253817141ad6eb62c98477115c2837133b7c64
 #Block was generating for 0 seconds
 
 Block:
 Id: 4
-Timestamp: 1675546901926
-"Magic number: 2683476401329596032
+Timestamp: 1676904890700
+Magic number: 1066793542
 Hash of the previous block:
-A0fc247cacf7cb504e958afb8f7b5b7b0f000555d396175cad0784d1ebd3af94c
+A0a6898829affda17df6d3a6c5a253817141ad6eb62c98477115c2837133b7c64
 Hash of the block:
-A08261704335b3385f75ddf57493733949947adf0e0aace7f59dd24a9ae690b55
+A0899310d861b939f8896cdcc71efa9a549bc0f5c56895f9b9aaeac4b67d5c56d
 #Block was generating for 0 seconds
 
 Block:
 Id: 5
-Timestamp: 1675546901926
-"Magic number: 2683476401329596032
+Timestamp: 1676904890700
+Magic number: 1066793542
 Hash of the previous block:
-A08261704335b3385f75ddf57493733949947adf0e0aace7f59dd24a9ae690b55
+A0899310d861b939f8896cdcc71efa9a549bc0f5c56895f9b9aaeac4b67d5c56d
 Hash of the block:
-A01dbb08483fe1a2aa4604901c4560e78032487dd24949825fbe56ec9e9a92beb
+A08d8e596610742a2555d662b1fcfc0139d5c5cfdfe31e20b4acfbf42e5e78956
 #Block was generating for 0 seconds
 [1;31m
 Start test 3[0m
@@ -113,52 +113,52 @@
 
 Genesis Block:
 Id: 1
-Timestamp: 1675546902157
-!Magic number: 652072820043104093
+Timestamp: 1676904890915
+Magic number: 1298498081
 Hash of the previous block:
 0
 Hash of the block:
-A0070bd832f2aa428c1432c2dfb9bfe8c1d16c29bfb66f1f80a10e13d132e373b
+A0009377f56f7d297823457f25b27c0a7f2a078f68c1d53408dd69a93c957d7c7
 #Block was generating for 0 seconds
 
 Block:
 Id: 2
-Timestamp: 1675546902157
-!Magic number: 708522728758136013
+Timestamp: 1676904890915
+Magic number: 786910049
 Hash of the previous block:
-A0070bd832f2aa428c1432c2dfb9bfe8c1d16c29bfb66f1f80a10e13d132e373b
+A0009377f56f7d297823457f25b27c0a7f2a078f68c1d53408dd69a93c957d7c7
 Hash of the block:
-A00e9875e19a2038fceb31cd4ac219dbc4a4c8dfbb4d04fc85a808dee3014ddba
+A001f194bdb3b0cdca3c7a0c84ee17a0315e4ab7802640589bcebe890fdb61ed0
 #Block was generating for 0 seconds
 
 Block:
 Id: 3
-Timestamp: 1675546902158
-!Magic number: 700552013175674492
+Timestamp: 1676904890916
+Magic number: 1982450218
 Hash of the previous block:
-A00e9875e19a2038fceb31cd4ac219dbc4a4c8dfbb4d04fc85a808dee3014ddba
+A001f194bdb3b0cdca3c7a0c84ee17a0315e4ab7802640589bcebe890fdb61ed0
 Hash of the block:
-A00ce3d685766941afe532f78c65bdf1d5a429dbedc7ed40f12749c4b9eab959e
+A00575358b7cff1246120dfe665b28cff0f4a93c0a7bbcc61a1d24b17d2adbffc
 #Block was generating for 0 seconds
 
 Block:
 Id: 4
-Timestamp: 1675546902158
-!Magic number: 700552013175674492
+Timestamp: 1676904890916
+Magic number: 1982450218
 Hash of the previous block:
-A00ce3d685766941afe532f78c65bdf1d5a429dbedc7ed40f12749c4b9eab959e
+A00575358b7cff1246120dfe665b28cff0f4a93c0a7bbcc61a1d24b17d2adbffc
 Hash of the block:
-A0047e2b807931a77ef256e24872e6af7058565f3f0bd895b6241516ddd7f4bf2
+A00f6407930368e6294f2c640320218fa4b08fc117da7c13ff5b34858dccf36d4
 #Block was generating for 0 seconds
 
 Block:
 Id: 5
-Timestamp: 1675546902158
-!Magic number: 700552013175674492
+Timestamp: 1676904890917
+Magic number: 1254281692
 Hash of the previous block:
-A0047e2b807931a77ef256e24872e6af7058565f3f0bd895b6241516ddd7f4bf2
+A00f6407930368e6294f2c640320218fa4b08fc117da7c13ff5b34858dccf36d4
 Hash of the block:
-A007bfc25f047c1911e073bf89d3b6503975c1a70bfc099cecfae979d55db3983
+A00be1d56b4e8da0498757ce15b735fb1cd15f1f878edd9a8c1739432cb89cba9
 #Block was generating for 0 seconds
 [1;31m
 Start test 4[0m
@@ -167,52 +167,52 @@
 
 Genesis Block:
 Id: 1
-Timestamp: 1675546902366
-"Magic number: 5206624999595921560
+Timestamp: 1676904891143
+Magic number: 1298498081
 Hash of the previous block:
 0
 Hash of the block:
-Afcfed53bf8476f30fa0019e7cf491fc7c3407b70c992d5b205869d7e6646ca97
+A588901a7c1fa8ca2752ebe0c8ed43555c0bc188ca0a109efadbd1052ef250c65
 #Block was generating for 0 seconds
 
 Block:
 Id: 2
-Timestamp: 1675546902366
-"Magic number: 5845860018418395676
+Timestamp: 1676904891143
+Magic number: 1121865668
 Hash of the previous block:
-Afcfed53bf8476f30fa0019e7cf491fc7c3407b70c992d5b205869d7e6646ca97
+A588901a7c1fa8ca2752ebe0c8ed43555c0bc188ca0a109efadbd1052ef250c65
 Hash of the block:
-A17fd52140b1b63020e22d3036de79a505ade460621b11b81015e138acbe8b955
+A5546825022622aedac87fd785eee1178ad1afd92de11223f882d4e8c7f062107
 #Block was generating for 0 seconds
 
 Block:
 Id: 3
-Timestamp: 1675546902366
-"Magic number: 5845860018418395676
+Timestamp: 1676904891143
+Magic number: 1121865668
 Hash of the previous block:
-A17fd52140b1b63020e22d3036de79a505ade460621b11b81015e138acbe8b955
+A5546825022622aedac87fd785eee1178ad1afd92de11223f882d4e8c7f062107
 Hash of the block:
-A0092f0f24ea3eca9182abe3a3193dd9e4b386b78cc368d43648e2a2d305c01ba
+A29c1913291576a4259330ec998d927215766997245647a2772e900b34add620f
 #Block was generating for 0 seconds
 
 Block:
 Id: 4
-Timestamp: 1675546902366
-"Magic number: 5845860018418395676
+Timestamp: 1676904891143
+Magic number: 1121865668
 Hash of the previous block:
-A0092f0f24ea3eca9182abe3a3193dd9e4b386b78cc368d43648e2a2d305c01ba
+A29c1913291576a4259330ec998d927215766997245647a2772e900b34add620f
 Hash of the block:
-Ab45a2c32a12500953df8128d6b6e023a35511d9ae091eae225bc7ce7cd913775
+Ae6bce968d700db5fbb25add320c629f7813aaf2d564119bca496f08956d919c2
 #Block was generating for 0 seconds
 
 Block:
 Id: 5
-Timestamp: 1675546902366
-"Magic number: 5845860018418395676
+Timestamp: 1676904891143
+Magic number: 1121865668
 Hash of the previous block:
-Ab45a2c32a12500953df8128d6b6e023a35511d9ae091eae225bc7ce7cd913775
+Ae6bce968d700db5fbb25add320c629f7813aaf2d564119bca496f08956d919c2
 Hash of the block:
-A57ff5d86cec70df071655562eaac0985321957d85f6086816bcc8d7f07b966c8
+Ac808663041e74c6b6561cc042c25076cfde79eeee744ada49d141359d59d8790
 #Block was generating for 0 seconds
 [1;31m
 Start test 5[0m
@@ -221,52 +221,52 @@
 
 Genesis Block:
 Id: 1
-Timestamp: 1675546902581
-"Magic number: 4405712174733833380
+Timestamp: 1676904891363
+Magic number: 1298498081
 Hash of the previous block:
 0
 Hash of the block:
-A0f72fe8d43c14ef1de8b4740d6d2564ec32334866eb8a1ae7080d2aa2bd5b1cb
+A0d2682bb1f465e7121fce17e704159c7f62ef52b55dd238cd71279ac4a03ea5c
 #Block was generating for 0 seconds
 
 Block:
 Id: 2
-Timestamp: 1675546902581
-"Magic number: 7924477914361751140
+Timestamp: 1676904891363
+Magic number: 540158175
 Hash of the previous block:
-A0f72fe8d43c14ef1de8b4740d6d2564ec32334866eb8a1ae7080d2aa2bd5b1cb
+A0d2682bb1f465e7121fce17e704159c7f62ef52b55dd238cd71279ac4a03ea5c
 Hash of the block:
-A031243d04e837602ecf5344bb28c99e1aee2d241c3e91af13c274e5b26bf8ffc
+A0ff467e737e9eab8d338e548ae813e2b24557c3b37278965086741adf12e12d5
 #Block was generating for 0 seconds
 
 Block:
 Id: 3
-Timestamp: 1675546902581
-"Magic number: 7924477914361751140
+Timestamp: 1676904891363
+Magic number: 540158175
 Hash of the previous block:
-A031243d04e837602ecf5344bb28c99e1aee2d241c3e91af13c274e5b26bf8ffc
+A0ff467e737e9eab8d338e548ae813e2b24557c3b37278965086741adf12e12d5
 Hash of the block:
-A087701c9d19ddb6c2d7136f04cd36f55699f25da303bfe54587c415d6a8eb358
+A0c97dbabf5ccf4560d08e116fb6d21ab7233cf0c69cc14b3d868c9d8a6f234a1
 #Block was generating for 0 seconds
 
 Block:
 Id: 4
-Timestamp: 1675546902581
-"Magic number: 7924477914361751140
+Timestamp: 1676904891363
+Magic number: 540158175
 Hash of the previous block:
-A087701c9d19ddb6c2d7136f04cd36f55699f25da303bfe54587c415d6a8eb358
+A0c97dbabf5ccf4560d08e116fb6d21ab7233cf0c69cc14b3d868c9d8a6f234a1
 Hash of the block:
-A0afceab407fe02e418e71152c9188a1ab088b99b4e1c29e00fc4a3742533e619
+A0c8f27667bdff06f3101426b1ea3cf30bceeb914575e1344ee76d9a4a6cc7b22
 #Block was generating for 0 seconds
 
 Block:
 Id: 5
-Timestamp: 1675546902581
-"Magic number: 7924477914361751140
+Timestamp: 1676904891363
+Magic number: 540158175
 Hash of the previous block:
-A0afceab407fe02e418e71152c9188a1ab088b99b4e1c29e00fc4a3742533e619
+A0c8f27667bdff06f3101426b1ea3cf30bceeb914575e1344ee76d9a4a6cc7b22
 Hash of the block:
-A0b23c2a69bab6adad345a872d5cfa324d0d3f8d0b4ef4e4dd17ac1769a671c80
+A0c07b5f692dff9726db8df32e426eb2926a441128efeaa7333806486f248c06a
 #Block was generating for 0 seconds
 [1;31m
 Start test 6[0m
@@ -275,50 +275,50 @@
 
 Genesis Block:
 Id: 1
-Timestamp: 1675546902803
-"Magic number: 1205066255681133912
+Timestamp: 1676904891644
+Magic number: 1298498081
 Hash of the previous block:
 0
 Hash of the block:
-A00d84e6a818ba483b66d782bff973e51252798c7e5f7d000a492d357abbdff66
+A00f8c52fd741f1750aea51e4e39e078f3f91ba92c866189d6b3c7909ea16366f
 #Block was generating for 0 seconds
 
 Block:
 Id: 2
-Timestamp: 1675546902803
-"Magic number: 4121592004267003723
+Timestamp: 1676904891644
+Magic number: 2136091775
 Hash of the previous block:
-A00d84e6a818ba483b66d782bff973e51252798c7e5f7d000a492d357abbdff66
+A00f8c52fd741f1750aea51e4e39e078f3f91ba92c866189d6b3c7909ea16366f
 Hash of the block:
-A00f9d1488fd07a8b90e0f64063f897af7cfbb07461161f07cb6857bc0222b80c
+A003bd287020e540a46a3a5d0693455dc0270492b04241695b5e5065d07516adc
 #Block was generating for 0 seconds
 
 Block:
 Id: 3
-Timestamp: 1675546902804
-"Magic number: 5991861536262780072
+Timestamp: 1676904891644
+Magic number: 2136091775
 Hash of the previous block:
-A00f9d1488fd07a8b90e0f64063f897af7cfbb07461161f07cb6857bc0222b80c
+A003bd287020e540a46a3a5d0693455dc0270492b04241695b5e5065d07516adc
 Hash of the block:
-A00d684be16fbb1893a7eab29d87771a9fc7106a6e565466281e8b8cfca2678f3
+A00033191b30fa508ce9e8cdc27b276154abff6bb338d277b559d1f9164c3804c
 #Block was generating for 0 seconds
 
 Block:
 Id: 4
-Timestamp: 1675546902804
-"Magic number: 5697021544102141972
+Timestamp: 1676904891645
+Magic number: 1180332925
 Hash of the previous block:
-A00d684be16fbb1893a7eab29d87771a9fc7106a6e565466281e8b8cfca2678f3
+A00033191b30fa508ce9e8cdc27b276154abff6bb338d277b559d1f9164c3804c
 Hash of the block:
-A00b138ea77d2f1b03b4090de948ebcbe3aade2b7f63e86707550b1c0751a21ca
+A005da2a83095ead7a10bb3f09f6aecbef3372a0d8d5abe714300b6c349bc4c9a
 #Block was generating for 0 seconds
 
 Block:
 Id: 5
-Timestamp: 1675546902804
-"Magic number: 5697021544102141972
+Timestamp: 1676904891645
+Magic number: 1180332925
 Hash of the previous block:
-A00b138ea77d2f1b03b4090de948ebcbe3aade2b7f63e86707550b1c0751a21ca
+A005da2a83095ead7a10bb3f09f6aecbef3372a0d8d5abe714300b6c349bc4c9a
 Hash of the block:
-A006fc82474b26b467f718ecb846b0ade0dcf8db3f49d148bb0508261e4180bca
+A009fd8b1c6b8774cd62ea7875e672007ba7244aa6d97e7b9f827fe950e044c4f
 #Block was generating for 0 seconds

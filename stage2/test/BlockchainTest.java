@@ -145,7 +145,7 @@ class Block {
 
     static List<Block> parseBlocks(String output) throws BlockParseException {
         // String[] strBlocks = output.substring(
-            // output.indexOf("Block:")).split("\n\n");
+        // output.indexOf("Block:")).split("\n\n");
 
         String[] strBlocks = output.split("\n\n");
 
@@ -168,6 +168,7 @@ class Block {
 
 class Clue {
     String zeros;
+
     Clue(int n) {
         zeros = "0".repeat(n);
     }

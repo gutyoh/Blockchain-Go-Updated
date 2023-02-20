@@ -33,13 +33,6 @@ type Block struct {
 }
 
 func (b *Block) CalculateHash() string {
-	//magicNumber := fmt.Sprintf("%d", b.MagicNumber)
-	//id := fmt.Sprintf("%d", b.ID)
-	//timestamp := fmt.Sprintf("%s", b.Timestamp)
-	//
-	//sum := sha256.Sum256([]byte(id + timestamp + b.PreviousHash + magicNumber))
-	//return fmt.Sprintf("%x", sum)
-
 	var (
 		blockID           = fmt.Sprintf("%d", b.ID)
 		timestamp         = fmt.Sprintf("%d", b.Timestamp.UnixMilli())
@@ -47,7 +40,7 @@ func (b *Block) CalculateHash() string {
 		previousBlockHash = b.PreviousHash
 	)
 	sha256Hash := sha256.New()
-	sha256Hash.Write([]byte(blockID + previousBlockHash + timestamp + magicNumber))
+	sha256Hash.Write([]byte(blockID + timestamp + magicNumber + previousBlockHash))
 
 	return fmt.Sprintf("%x", sha256Hash.Sum(nil))
 }

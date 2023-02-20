@@ -43,13 +43,6 @@ type Block struct {
 }
 
 func (b *Block) CalculateHash() string {
-	//magicNumber := fmt.Sprintf("%d", b.MagicNumber)
-	//id := fmt.Sprintf("%d", b.ID)
-	//timestamp := fmt.Sprintf("%s", b.Timestamp)
-	//
-	//sum := sha256.Sum256([]byte(id + timestamp + b.PreviousHash + magicNumber))
-	//return fmt.Sprintf("%x", sum)
-
 	var (
 		blockID           = fmt.Sprintf("%d", b.ID)
 		timestamp         = fmt.Sprintf("%d", b.Timestamp.UnixMilli())
@@ -57,17 +50,21 @@ func (b *Block) CalculateHash() string {
 		previousBlockHash = b.PreviousHash
 	)
 	sha256Hash := sha256.New()
-	sha256Hash.Write([]byte(blockID + previousBlockHash + timestamp + magicNumber))
+	sha256Hash.Write([]byte(blockID + timestamp + magicNumber + previousBlockHash))
 
 	return fmt.Sprintf("%x", sha256Hash.Sum(nil))
 }
 
 func (b *Block) GenerateTxID(data string) string {
-	binaryData := []byte(data)
-	sha256Hash1 := sha256.Sum256(binaryData)
-	sha256Hash2 := sha256.Sum256(sha256Hash1[:])
+	binaryData := []byte(fmt.Sprintf("%d%d%s", b.Timestamp.UnixMilli(), rand.Int31(), data))
 
-	return fmt.Sprintf("%x", sha256Hash2)
+	sha256Hash1 := sha256.New()
+	sha256Hash1.Write(binaryData)
+
+	sha256Hash2 := sha256.New()
+	sha256Hash2.Write(sha256Hash1.Sum(nil))
+
+	return fmt.Sprintf("%x", sha256Hash2.Sum(nil))
 }
 
 func (b *Block) SignTx(tx Transaction) string {
@@ -114,16 +111,12 @@ func (bc *Blockchain) CreateGenesisBlock() *Block {
 	sha256Hash.Write([]byte(blockData))
 	hash := sha256Hash.Sum(nil)
 
-	// transaction := bc.SignGenesisBlockRewardTx(miner)
-
 	genesisBlock := &Block{
-		ID:          1,
-		Hash:        fmt.Sprintf("%x", hash),
-		MagicNumber: magicNumber,
-		// Miner:       uint(miner),
+		ID:           1,
+		Hash:         fmt.Sprintf("%x", hash),
+		MagicNumber:  magicNumber,
 		Timestamp:    timestamp,
 		PreviousHash: "0",
-		// Transactions: []Transaction{transaction},
 	}
 	return genesisBlock
 }
@@ -168,12 +161,12 @@ func (bc *Blockchain) PromptForTxDetails() (string, string, int, error) {
 	return fromUser, toUser, amount, nil
 }
 
-func (bc *Blockchain) GetWalletBalance(address string) int {
+func (bc *Blockchain) GetWalletBalance(username string) int {
 	// To make things simple, every user starts with 100 VC:
 	balance := 100
 
-	balance = bc.CheckValidPendingTxs(address, balance)
-	balance = bc.CheckPreviousBCTxs(address, balance)
+	balance = bc.CheckValidPendingTxs(username, balance)
+	balance = bc.CheckPreviousBCTxs(username, balance)
 	return balance
 }
 
@@ -210,7 +203,7 @@ func (bc *Blockchain) CheckPreviousBCTxs(address string, balance int) int {
 func (bc *Blockchain) PrintInvalidTxDetails(fromUsername string, toUsername string,
 	amount int, fromUsernameCurrentBalance int) {
 
-	fmt.Printf("Transaction is not valid! ❌ \n")
+	fmt.Printf("Transaction is not valid\n")
 	switch {
 	case fromUsername == toUsername:
 		fmt.Printf("You can't send VC from one user to the same user\n\n")
@@ -218,21 +211,18 @@ func (bc *Blockchain) PrintInvalidTxDetails(fromUsername string, toUsername stri
 		fmt.Printf("User %s doesn't have enough VC to send\n", fromUsername)
 
 		fmt.Printf("%s current balance: %d VC\n\n", fromUsername, fromUsernameCurrentBalance)
-		// fmt.Printf("%s current balance %d VC\n\n", fromUsername, fromUsernameCurrentBalance)
 	}
 }
 
 func (bc *Blockchain) PrintValidTxDetails(fromUsername string, toUsername string,
 	amount int, fromUsernameCurrentBalance int) {
-	fmt.Printf("Transaction is valid ✅ \n")
+	fmt.Printf("Transaction is valid\n")
 
 	fromUsernameRemainingBalance := fromUsernameCurrentBalance - amount
 	fmt.Printf("%s remaining balance: %d VC\n", fromUsername, fromUsernameRemainingBalance)
-	//fmt.Printf("%s remaining balance %d VC\n", fromUsername, fromUsernameRemainingBalance)
 
 	toUsernameNewBalance := bc.GetWalletBalance(toUsername) + amount
 	fmt.Printf("%s new balance: %d VC\n\n", toUsername, toUsernameNewBalance)
-	//fmt.Printf("%s new balance %d VC\n\n", toUsername, toUsernameNewBalance)
 }
 
 func (bc *Blockchain) ProcessValidTx(fromUsername string, toUsername string, amount int, fromUsernameCurrentBalance int) error {

@@ -24,6 +24,8 @@ class Block {
     String prevHash;
     String hash;
 
+    String prevMsgID;
+
     static ArrayList<String> minerIds;
     static int N;
 
@@ -198,11 +200,12 @@ class Block {
             if (11 != lines.size() - 1) {
                 throw new BlockParseException("Your program printed in Block " + block.id +
                         " after the line: \"N was increased/decreased/stays the same\"\n" +
-                        "an additional and unexpected line: " +  lines.get(lines.size() - 1));
+                        "an additional and unexpected line: " + lines.get(lines.size() - 1));
             }
         }
 
-        if (block.id > 1 && block.id <=5) {
+        // Check the `Block data of the subsequent blocks:`
+        if (block.id > 1 && block.id <= 5) {
             if (!lines.get(0).toLowerCase().startsWith("block")) {
                 throw new BlockParseException("The first line of the first block in the blockchain should be \"Genesis Block:\" and every subsequent Block's first line should be \"Block:\"" +
                         "\nYour program instead printed as the first line in Block " + block.id + ": " + "\"" + lines.get(0) + "\"");
@@ -276,12 +279,12 @@ class Block {
                         " an unexpected line: " + lines.get(i));
             }
 
-            while(!lines.get(i).toLowerCase().startsWith("message")) {
+            while (!lines.get(i).toLowerCase().startsWith("message")) {
                 i++;
             }
 
             // After the loop, we should reach the line with `Message ID: <Message ID>`
-            if(!lines.get(i).toLowerCase().startsWith("message id")) {
+            if (!lines.get(i).toLowerCase().startsWith("message id")) {
                 throw new BlockParseException("After the line with \"Block data:\" " +
                         "the next line should contain the message " +
                         "ID and start with \"Message ID:\" " +
@@ -302,7 +305,7 @@ class Block {
 
             i++; // Get the line — `Signature: <Signature>`
 
-            if(!lines.get(i).toLowerCase().startsWith("signature")) {
+            if (!lines.get(i).toLowerCase().startsWith("signature")) {
                 throw new BlockParseException("After the line with \"Message ID:\" " +
                         "the next line should contain the message signature " +
                         "and start with \"Signature:\" " +
