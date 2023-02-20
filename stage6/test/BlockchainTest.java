@@ -15,6 +15,8 @@ class BlockParseException extends Exception {
 }
 
 
+
+
 class Block {
 
     int id;
@@ -22,6 +24,9 @@ class Block {
     long magic;
     String prevHash;
     String hash;
+    String prevTxId;
+
+    String txId;
 
     static ArrayList<String> minerIds;
     static int N;
@@ -327,7 +332,22 @@ class Block {
                 if (!lines.get(i).toLowerCase().startsWith("transaction #" + txCounter)) {
                     throw new BlockParseException("After the line with the coinbase transaction " +
                             "the next line should start with " +
-                            "\"Transaction #" + txCounter + "\"");
+                            "\"Transaction #" + txCounter + ":\"" + "\n" +
+                            "Your program instead printed in Block " + block.id +
+                            " an incorrect line: " + lines.get(i));
+                }
+
+                // Get the transaction number:
+                int txNumber = 0;
+                // 1. Check if there is a number after the `#` sign and no other characters "Transaction #2"
+                if (lines.get(i).split("#")[1].matches("^[0-9]*$")) {
+                    txNumber = Integer.parseInt(lines.get(i).split("#")[1]);
+                } else if (lines.get(i).split("#")[1].split(":")[0].matches("^[0-9]*$")) {
+                    txNumber = Integer.parseInt(lines.get(i).split("#")[1].split(":")[0]);
+                } else {
+                    throw new BlockParseException("After the line with the coinbase transaction " +
+                            "the next line should start with \"Transaction #" + txCounter + ":\"" + "\n" +
+                            "Your program instead printed in Block " + block.id + " an incorrect line: " + lines.get(i));
                 }
 
                 i += 1;  // Get the line — `Transaction ID: <Transaction ID>`
@@ -347,6 +367,18 @@ class Block {
                             + "Your program instead printed in Block " + block.id +
                             " an incorrect Transaction ID: " + txId);
                 }
+
+                // If there is more than two transactions (coinbase + 2 non-coinbase transactions)
+                // Then check if the current transaction ID is different from the previous transaction ID
+                if (txNumber > 2 && block.prevTxId.equals(txId)) {
+                    throw new BlockParseException("The current transaction ID should be different from the previous transaction ID.\n" +
+                            "Your program instead printed in Block " + block.id +
+                            " the same transaction ID for two consecutive transactions: " +
+                            " Previous transaction ID: " + block.prevTxId + "\n" +
+                            " Current transaction ID: " + txId);
+                }
+
+                block.prevTxId = txId;
 
                 i += 1;  // Get the line — `<From user> sent <VC Amount> VC to <To user>`
 
