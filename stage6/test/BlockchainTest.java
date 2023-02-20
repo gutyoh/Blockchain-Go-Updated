@@ -15,8 +15,6 @@ class BlockParseException extends Exception {
 }
 
 
-
-
 class Block {
 
     int id;
@@ -171,12 +169,12 @@ class Block {
             if (11 != lines.size() - 1) {
                 throw new BlockParseException("Your program printed in Block " + block.id +
                         " after the line: \"N was increased/decreased/stays the same\"\n" +
-                        "an additional and unexpected line: " +  lines.get(lines.size() - 1));
+                        "an additional and unexpected line: " + lines.get(lines.size() - 1));
             }
         }
 
         // Check the `Block data of the subsequent blocks:`
-        if (block.id > 1 && block.id <=5) {
+        if (block.id > 1 && block.id <= 5) {
             if (!lines.get(0).toLowerCase().startsWith("block")) {
                 throw new BlockParseException("The first line of the first block in the blockchain should be \"Genesis Block:\" and every subsequent Block's first line should be \"Block:\"" +
                         "\nYour program instead printed as the first line in Block " + block.id + ": " + "\"" + lines.get(0) + "\"");
